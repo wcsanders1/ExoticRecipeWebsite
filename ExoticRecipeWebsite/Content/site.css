@@ -38,9 +38,16 @@ ul {
 .main-header {
     background-color: burlywood;
     text-align: center;
-    height: 200px;
     width: 100%;
     padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title-menu-wrapper {
+    display: flex;
+    flex-direction: column;
 }
 
 .header-title {
@@ -49,11 +56,19 @@ ul {
     font-size: 5em;
 }
 
+
 .header-menu li {
-    display: block;
     margin: 10px 0;
     font-family: "Idion", sans-serif;
     font-size: 2em;
+}
+
+.header-image-left,
+.header-image-right {
+    background:  url("../images/bowl_of_steaming_soup_clip_art_13404.gif") no-repeat center;
+    height: 50px;
+    width: 50px;
+    background-size: 100% 100%;
 }
 
 footer {
@@ -64,42 +79,49 @@ footer {
 
 
 /*****************************************
-    FOR FULL-SCREEN SIZE
+    FOR SEMI-FULL-SCREEN SIZE
 *****************************************/
 
-@media (min-width: 800px) {
-
-    .main-header {
-
-    }
-
-    .title-menu-wrapper {
-        display: inline-block;
-    }
+@media screen and (min-width: 880px) {
 
     .header-menu li {
         display: inline-block;
         margin: 0 40px;
     }
 
+    .header-image-left {
+        margin-right: 5%;
+    }
+
+    .header-image-right {
+        margin-left: 5%;
+    }
+}
+
+
+
+
+/*****************************************
+    FOR FULL-SCREEN SIZE
+*****************************************/
+
+@media screen and (min-width: 1250px) {
     .header-image-left,
     .header-image-right {
-        background: url("../images/bowl_of_steaming_soup_clip_art_13404.jpg") no-repeat center;
-        height: 50px;
-        width: 50px;
-        background-size: 100% 100%;
-        display: inline-block;
-        transform: translateY(-50%);
+        height: 100px;
+        width: 100px;
     }
 
     .header-image-left {
-        margin-right: 10%;
+        margin-right: 15%;
     }
 
     .header-image-right {
-        margin-left: 10%;
+        margin-left: 15%;
     }
 }
+
+
 
 
 /*****************************************

@@ -95,6 +95,7 @@
     <Content Include="Content\site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="images\bowl_of_steaming_soup_clip_art_13404.gif" />
     <Content Include="images\bowl_of_steaming_soup_clip_art_13404.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
