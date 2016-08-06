@@ -1,0 +1,113 @@
+﻿/*****************************************
+    FONTS
+*****************************************/
+
+@font-face {
+    font-family: "Handi";
+    src: url("../fonts/Handi.otf");
+    src: url("../fonts/Handi.eot");
+    src: url("../fonts/Handi.eot?iefix") format("embedded-opentype"), url("../fonts/Handi.woff") format("woff"), url("../fonts/Handi.ttf") format("truetype");
+}
+
+@font-face{
+    font-family: "Idion";
+    src: url("../fonts/Idion.otf");
+    src: url("../fonts/Idion.otf");
+    src: url("../fonts/Idion.eot?iefix") format("embedded-opentype"), url("../fonts/Idion.woff") format("woff"), url("../fonts/Idion.ttf") format("truetype");
+}
+
+
+
+/*****************************************
+    FOR CELL-PHONE SIZE
+*****************************************/
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+}
+
+ul {
+    list-style: none;
+}
+
+.main-header {
+    background-color: burlywood;
+    text-align: center;
+    height: 200px;
+    width: 100%;
+    padding: 20px;
+}
+
+.header-title {
+    padding-bottom: 30px;
+    font-family: "Handi", sans-serif;
+    font-size: 5em;
+}
+
+.header-menu li {
+    display: block;
+    margin: 10px 0;
+    font-family: "Idion", sans-serif;
+    font-size: 2em;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+}
+
+
+
+/*****************************************
+    FOR FULL-SCREEN SIZE
+*****************************************/
+
+@media (min-width: 800px) {
+
+    .main-header {
+
+    }
+
+    .title-menu-wrapper {
+        display: inline-block;
+    }
+
+    .header-menu li {
+        display: inline-block;
+        margin: 0 40px;
+    }
+
+    .header-image-left,
+    .header-image-right {
+        background: url("../images/bowl_of_steaming_soup_clip_art_13404.jpg") no-repeat center;
+        height: 50px;
+        width: 50px;
+        background-size: 100% 100%;
+        display: inline-block;
+        transform: translateY(-50%);
+    }
+
+    .header-image-left {
+        margin-right: 10%;
+    }
+
+    .header-image-right {
+        margin-left: 10%;
+    }
+}
+
+
+/*****************************************
+CLEARFIX
+*****************************************/
+
+.clearfix::after {
+		content: "";
+		display: table;
+		clear: both;
+	}
