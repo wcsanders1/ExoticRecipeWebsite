@@ -19,7 +19,7 @@
 
 
 /*****************************************
-    FOR CELL-PHONE SIZE
+    FOR CELL-PHONE SIZE AND ABOVE
 *****************************************/
 
 * {
@@ -29,6 +29,12 @@
     border: 0;
     outline: 0;
     font-size: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 ul {
@@ -71,11 +77,44 @@ ul {
     background-size: 100% 100%;
 }
 
-footer {
-    position: absolute;
-    bottom: 0;
+.container-body-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
+footer {
+    margin-top: auto;
+}
+
+.recipe-of-day-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 100px;
+}
+
+.ingredients {
+    width: 200px;
+    border: solid;
+}
+
+.recipe-of-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    vertical-align: middle;
+    order: -1;
+}
+
+.recipe-of-day-figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+}
 
 
 /*****************************************
@@ -95,6 +134,18 @@ footer {
 
     .header-image-right {
         margin-left: 5%;
+    }
+
+    .recipe-of-day-container {
+        flex-direction: row;
+        position: relative;
+    }
+
+    .ingredients {
+        left: 0;
+        align-self: flex-start;
+        position: absolute;
+        order: 0;
     }
 }
 
@@ -128,8 +179,8 @@ footer {
 CLEARFIX
 *****************************************/
 
-.clearfix::after {
+/*.clearfix::after {
 		content: "";
 		display: table;
 		clear: both;
-	}
+	}*/

@@ -21,7 +21,7 @@ html {
  * 2. Add the correct display in IE.
  */
 
-article,
+/*article,
 aside,
 details, 
 figcaption,
@@ -34,7 +34,7 @@ nav,
 section,
 summary {
   display: block;
-}
+}*/
 
 /**
  * Add the correct display in IE 9-.

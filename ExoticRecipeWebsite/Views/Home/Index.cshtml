@@ -1,7 +1,22 @@
-﻿
+﻿@model ExoticRecipeWebsite.Models.DailyRecipes
+
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
+<div class="recipe-of-day-container">
+    <div class="ingredients">
+        <h1>Ingredients</h1>
+        <ul>
+            <li>test1</li>
+            <li>test2</li>
+        </ul>
+    </div>
+    <div class="recipe-of-day">
+        <h1>@Model.RecipeTitle</h1>
+        <figure class="recipe-of-day-figure">
+            <img src="@Model.RecipeImage" width="200" height="200" />
+            <figcaption>@Model.RecipeCaption</figcaption>
+        </figure>
+    </div>
+</div>
