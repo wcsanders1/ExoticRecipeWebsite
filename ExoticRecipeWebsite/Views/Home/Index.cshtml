@@ -7,9 +7,14 @@
 <div class="recipe-of-day-container">
     <div class="ingredients">
         <h1>Ingredients</h1>
+        <form type="text" action="index.html" method="post">
+            <input type="number" id="serving-size" name="serving_size" value="4" min="1" max="20" maxlength="2" />
+        </form>
         <ul>
-            <li>test1</li>
-            <li>test2</li>
+            @foreach (string[] ingredient in Model.RecipeIngredients)
+            {
+                <li>@(ingredient[0] + ": " + ingredient[1] + " " + ingredient[2])</li>
+            }
         </ul>
     </div>
     <div class="recipe-of-day">

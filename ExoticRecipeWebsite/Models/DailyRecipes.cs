@@ -10,5 +10,6 @@ namespace ExoticRecipeWebsite.Models
         public string RecipeTitle { get; set; }
         public string RecipeImage { get; set; }
         public string RecipeCaption { get; set; }
+        public string[][] RecipeIngredients { get; set; }
     }
 }
