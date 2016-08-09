@@ -87,18 +87,74 @@ footer {
     margin-top: auto;
 }
 
-.recipe-of-day-container{
+.recipe-name-container {
+    display: flex;
+    width: 100%;
+    margin-bottom: 50px;
+    align-content: center;
+    justify-content: center;
+}
+
+.ingredients-headline-big-screen {
+    display: none;
+}
+
+.ingredients-headline-small-screen {
+    display: flex;
+    align-self: flex-start;
+    order: 0;
+    margin-top: 50px;
+}
+
+.recipe-name-container .title {
+    margin-top: 50px;
+}
+
+.recipe-of-day-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
-    margin-top: 100px;
 }
 
 .ingredients {
     width: 200px;
     border: solid;
+    order: 1;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ingredient-lists-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.ingredient-names-list {
+    /*width: 50%;*/
+    flex: 1;
+}
+
+.ingredient-amounts-list {
+    flex: 1;
+}
+
+button {
+  padding: 19px 39px 18px 39px;
+  color: #FFF;
+  background-color: #4bc970;
+  font-size: 18px;
+  text-align: center;
+  font-style: normal;
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #3ac162;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
 }
 
 .recipe-of-day {
@@ -110,10 +166,16 @@ footer {
 }
 
 .recipe-of-day-figure {
-    display: flex;
-    flex-direction: column;
+    display: table;
     align-items: center;
-    width: 200px;
+    margin: 0;
+    width: 1px;
+    top: 0;
+}
+
+.recipe-of-day-figure img,
+.recipe-of-day-figure figcaption {
+    display: table-row;
 }
 
 
@@ -141,11 +203,24 @@ footer {
         position: relative;
     }
 
+    .ingredients-headline-big-screen {
+        display: flex;
+        margin-bottom: 10px;
+        padding-left: 10px;
+    }
+
+    .ingredients-headline-small-screen {
+        display: none;
+    }
+
     .ingredients {
         left: 0;
         align-self: flex-start;
         position: absolute;
         order: 0;
+        border-left: 0;
+        margin-top: 0;
+        padding-left: 10px;
     }
 }
 

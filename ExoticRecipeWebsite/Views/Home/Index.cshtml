@@ -4,24 +4,38 @@
     ViewBag.Title = "Index";
 }
 
+<div class="recipe-name-container">
+    <h1 class="title">@Model.RecipeTitle</h1>
+</div>
+<h1 class="ingredients-headline-big-screen">Ingredients:</h1>
 <div class="recipe-of-day-container">
     <div class="ingredients">
-        <h1>Ingredients</h1>
-        <form type="text" action="index.html" method="post">
+        <form class="serving-size-input" type="text" action="index.html" method="post">
+            <label for="serving-size">Serving Size:</label>
             <input type="number" id="serving-size" name="serving_size" value="4" min="1" max="20" maxlength="2" />
         </form>
-        <ul>
             @foreach (string[] ingredient in Model.RecipeIngredients)
             {
-                <li>@(ingredient[0] + ": " + ingredient[1] + " " + ingredient[2])</li>
+                <div class="ingredient-lists-container">
+                    <div class="ingredient-names-list"> 
+                        <ul>
+                            <li>@(ingredient[0] + ": ")</li>
+                        </ul>
+                    </div>
+                    <div class="ingredient-amounts-list">
+                        <ul>
+                            <li>@(ingredient[1] + " " + ingredient[2])</li>
+                        </ul>
+                    </div>
+                </div>
             }
-        </ul>
+        <button type="submit">Serving Size</button>
     </div>
     <div class="recipe-of-day">
-        <h1>@Model.RecipeTitle</h1>
         <figure class="recipe-of-day-figure">
             <img src="@Model.RecipeImage" width="200" height="200" />
             <figcaption>@Model.RecipeCaption</figcaption>
         </figure>
+        <h1 class="ingredients-headline-small-screen">Ingredients:</h1>
     </div>
 </div>
