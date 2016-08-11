@@ -107,6 +107,14 @@
     <Content Include="fonts\Idion.eot" />
     <Content Include="fonts\Idion.ttf" />
     <Content Include="fonts\Idion.woff" />
+    <Content Include="fonts\WinkBold.otf" />
+    <Content Include="fonts\Wonkie.otf" />
+    <Content Include="fonts\WinkBold.eot" />
+    <Content Include="fonts\WinkBold.ttf" />
+    <Content Include="fonts\WinkBold.woff" />
+    <Content Include="fonts\Wonkie.eot" />
+    <Content Include="fonts\Wonkie.ttf" />
+    <Content Include="fonts\Wonkie.woff" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

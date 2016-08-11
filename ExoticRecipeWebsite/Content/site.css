@@ -12,8 +12,22 @@
 @font-face{
     font-family: "Idion";
     src: url("../fonts/Idion.otf");
-    src: url("../fonts/Idion.otf");
+    src: url("../fonts/Idion.eot");
     src: url("../fonts/Idion.eot?iefix") format("embedded-opentype"), url("../fonts/Idion.woff") format("woff"), url("../fonts/Idion.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "WinkBold";
+    src: url("../fonts/WinkBold.otf");
+    src: url("../fonts/WinkBold.eot");
+    src: url("../fonts/WinkBold.eot") format("embedded-opentype"), url("../fonts/WinkBold.woff") format("woff"), url("../fonts/WinkBold.ttf") format("truetype");
+}
+
+@font-face{
+    font-family: "Wonki";
+    src: url("../fonts/Wonkie.otf");
+    src: url("../fonts/Wonkie.eot");
+    src: url("../fonts/Wonki.eot?iefix") format("embedded-opentype"), url("../fonts/Wonkie.woff") format("woff"), url("../fonts/Wonkie.ttf") format("truetype");
 }
 
 
@@ -95,13 +109,15 @@ footer {
     margin-bottom: 50px;
     align-content: center;
     justify-content: center;
+    font-family: WinkBold;
 }
 
 .ingredients-headline {
     display: flex;
     align-self: flex-start;
     order: 0;
-    margin: -60px 0 40px 0;
+    margin: -80px 0 40px 0;
+    font-size: 2em;
 }
 
 .recipe-name-container .title {
@@ -109,7 +125,7 @@ footer {
 }
 
 .ingredients {
-    width: 200px;
+    width: 350px;
     border: solid;
     order: 1;
     margin-top: 40px;
@@ -118,6 +134,8 @@ footer {
     display: flex;
     flex-direction: column;
     box-shadow: inset 0 0 40px rgba(60,60,60, 1);
+    font-family: Wonki;
+    font-size: 1.5em;
 }
 
 .serving-size-input {
@@ -130,8 +148,12 @@ footer {
 }
 
 .ingredient-names-list {
+    flex: 2;
+}
 
-    flex: 1;
+.ingredient-names-list ul li,
+.ingredient-amounts-list ul li {
+    margin-bottom: 5px;   
 }
 
 .ingredient-amounts-list {
@@ -139,14 +161,14 @@ footer {
 }
 
 button {
-  padding: 19px 39px 18px 39px;
+  padding: 0;
   color: #FFF;
   background-color: #4bc970;
   font-size: 18px;
   text-align: center;
   font-style: normal;
   border-radius: 5px;
-  width: 100%;
+  width: 50%;
   border: 1px solid #3ac162;
   border-width: 1px 1px 3px;
   box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
@@ -167,6 +189,10 @@ button {
     margin: 0;
     width: 300px;
     height: 300px;
+}
+
+.recipe-of-day-figure figcaption {
+    font-family: Wonki;
 }
 
 .recipe-of-day-figure img,
@@ -193,12 +219,12 @@ button {
 }
 
 
+
 /*****************************************
-    FOR SEMI-FULL-SCREEN SIZE
+    FOR SEMI-SEMI-FULL-SCREEN SIZE
 *****************************************/
-
-@media screen and (min-width: 880px) {
-
+@media screen and (min-width: 850px) {
+    
     .header-menu li {
         display: inline-block;
         margin: 0 40px;
@@ -212,9 +238,15 @@ button {
         margin-left: 5%;
     }
 
-    .recipe-of-day-container {
+     .recipe-of-day-container {
+        align-items: center;
         flex-direction: row;
         position: relative;
+    }
+    
+    .recipe-of-day {
+        margin-left: auto;
+        margin-right: 5%;
     }
 
     .ingredients {
@@ -224,7 +256,31 @@ button {
         order: 0;
         border-left: 0;
         margin-top: 0;
+    }
+    
+    .recipe-name-container h1 {
+        margin-left: auto;
+        margin-right: 5%;
+        width: 300px;
+        text-align: center;
+    }
+}
 
+
+/*****************************************
+    FOR SEMI-FULL-SCREEN SIZE
+*****************************************/
+
+@media screen and (min-width: 1050px) {
+
+    .recipe-of-day {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .recipe-name-container h1 {
+        margin-left: 0;
+        margin-right: 0;
     }
 }
 
