@@ -40,5 +40,11 @@
     </div>
     <div class="instructions">
         <h1 class="instructions-headline">Instructions:</h1>
+        <ol>
+            @foreach (string instruction in Model.RecipeInstructions)
+            {
+                <li>@instruction</li>
+            }
+        </ol>
     </div>
 </div>

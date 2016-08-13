@@ -21,6 +21,12 @@ namespace ExoticRecipeWebsite.Data
                     new string[] {"Cinnamon", "2", "tbls"},
                     new string[] {"Manganese", "1", "cube"}
       
+                },
+                RecipeInstructions = new string[]
+                {
+                    "Wring the juice out of the nettle.",
+                    "Wash the salt.",
+                    "Smash everything together until settled."
                 }
             },
             new DailyRecipes()
@@ -33,8 +39,14 @@ namespace ExoticRecipeWebsite.Data
                     new string[] {"Olive Oil", ".5", "cups"},
                     new string[] {"Sea Water", "1", "gallon"},
                     new string[] {"Earth", "2", "tsp"},
-                    new string[] {"Egg", "1", ""}
-                    
+                    new string[] {"Egg", "1", ""}  
+                },
+                RecipeInstructions = new string[]
+                {
+                    "Denounce delusion in all its forms.",
+                    "Prepare a pan of hot cocnut oil.",
+                    "Smash everything together.",
+                    "Put yourself in alternative shoes."
                 }
             },
         };

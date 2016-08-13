@@ -23,5 +23,10 @@ namespace ExoticRecipeWebsite.Controllers
             var dailyRecipe = _dailyRecipesRepository.GetDailyRecipe();
             return View(dailyRecipe);
         }
+
+        public ActionResult Contact()
+        {
+            return View();
+        }
     }
 }
