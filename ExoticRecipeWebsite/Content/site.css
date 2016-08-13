@@ -49,11 +49,18 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #F2F4F4;
 }
 
 ul {
     list-style: none;
+}
+
+.recipe-of-day-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;   
 }
 
 .main-header {
@@ -99,8 +106,31 @@ ul {
     flex: 1;
 }
 
+.container-body-content::after {
+    content: "";
+    background: url("../images/old_world_map.gif") no-repeat center center fixed;
+    background-size: cover;
+    position: fixed;
+    opacity: .15;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+}
+
+
+
 footer {
     margin-top: auto;
+    background-color: #191919;
+    color: #DFE2DB;
+    font-family: Idion;
+    font-size: 1.2em;
+}
+
+footer p {
+    margin-left: 40px;
 }
 
 .recipe-name-container {
@@ -110,6 +140,7 @@ footer {
     align-content: center;
     justify-content: center;
     font-family: WinkBold;
+    font-size: 2em;
 }
 
 .ingredients-headline {
@@ -136,6 +167,7 @@ footer {
     box-shadow: inset 0 0 40px rgba(60,60,60, 1);
     font-family: Wonki;
     font-size: 1.5em;
+    background-color: #DFE2DB;
 }
 
 .serving-size-input {
@@ -171,7 +203,7 @@ button {
   width: 50%;
   border: 1px solid #3ac162;
   border-width: 1px 1px 3px;
-  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  box-shadow: 0 -1px 0 rgba(60,60,60,0.1) inset;
   margin-bottom: 10px;
 }
 
@@ -181,6 +213,7 @@ button {
     align-items: center;
     vertical-align: middle;
     order: -1;
+    background-color: #DFE2DB;
 }
 
 .recipe-of-day-figure {
@@ -200,14 +233,6 @@ button {
     display: table-row;
 }
 
-.recipe-of-day-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
 .recipe-of-day-image-container{
     height: 300px;
     width: 300px;
@@ -216,6 +241,26 @@ button {
 
 .recipe-of-day-figure img {
     box-shadow:  -10px -10px 10px rgba(60,60,60, 1);
+}
+
+.instructions {
+    order: 2;
+    width: 350px;
+    border: solid;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: inset 0 0 40px rgba(60,60,60, 1);
+    font-family: Wonki;
+    font-size: 1.5em;
+    background-color: #DFE2DB;
+}
+
+.instructions-headline {
+    margin: -80px 0 40px 0;
+    font-size: 2em;
 }
 
 
@@ -242,11 +287,13 @@ button {
         align-items: center;
         flex-direction: row;
         position: relative;
+        flex-wrap: wrap;
     }
     
     .recipe-of-day {
         margin-left: auto;
         margin-right: 5%;
+
     }
 
     .ingredients {
@@ -263,6 +310,13 @@ button {
         margin-right: 5%;
         width: 300px;
         text-align: center;
+    }
+
+    .instructions {
+        flex: 0 1 100%;
+        align-self: flex-start;
+        border-left: 0;
+        border-right: 0;
     }
 }
 
@@ -281,6 +335,19 @@ button {
     .recipe-name-container h1 {
         margin-left: 0;
         margin-right: 0;
+        width: 100%;
+    }
+
+    .recipe-name-container {
+        font-size: 3em;
+    }
+
+    .instructions {
+        flex: 0;
+        position: absolute;
+        right: 0;
+        margin-top: 0;
+        border-left: solid;
     }
 }
 
@@ -304,6 +371,14 @@ button {
 
     .header-image-right {
         margin-left: 15%;
+    }
+
+    .ingredients {
+        width: 450px;
+    }
+
+    .instructions {
+        width: 450px;
     }
 }
 
