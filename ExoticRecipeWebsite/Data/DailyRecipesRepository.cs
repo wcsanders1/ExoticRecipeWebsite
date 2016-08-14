@@ -49,6 +49,49 @@ namespace ExoticRecipeWebsite.Data
                     "Put yourself in alternative shoes."
                 }
             },
+            new DailyRecipes()
+            {
+                RecipeTitle = "Bennington's Mash",
+                RecipeImage = "../images/pepper-cilantro.gif",
+                RecipeCaption = "This rustic snack isn't for the fainthearted. The pepper gives it bite, though the cilantro tempers the stray jungle notes. This is the perfect addition to a smart dinner party.",
+                RecipeIngredients = new string[][]
+                {
+                    new string[] {"Helium", "44", "mls"},
+                    new string[] {"Copper Wire", "3", "feet"},
+                    new string[] {"Brown Sugar", "", "a pinch"},
+                    new string[] {"Cidar", "2", "bowls"},
+                    new string[] {"Sheep", "5", ""}
+                },
+                RecipeInstructions = new string[]
+                {
+                    "Move all of your cookware to the highest possible position in the kitchen.",
+                    "Don't answer the door.",
+                    "Smash everything together.",
+                    "Ponder the origin of dust.",
+                    "Add saffron at the end for extra decadence!"
+                }
+            },
+            new DailyRecipes()
+            {
+                RecipeTitle = "St. Jessup's Gift",
+                RecipeImage = "../images/raw-pasta.gif",
+                RecipeCaption = "This simple gem of a dish will fill your house with the lucious aroma of wheat. It's heart-healthy too!",
+                RecipeIngredients = new string[][]
+                {
+                    new string[] {"Ice", "2", "handles"},
+                    new string[] {"1996 Toyata Camry", "", ""},
+                    new string[] {"Ash", "5", "cups"},
+                    new string[] {"Tepid Milk", "2", "tsp"}
+                },
+                RecipeInstructions = new string[]
+                {
+                    "Set the oven to 350 degrees.",
+                    "Be sure to turn the oven off before you leave.",
+                    "Check the oven again, to make sure it's off.",
+                    "Did you check each knob? Were all of them turned to 'off'?",
+                    "Did you check the coffee maker too, to make sure you unplugged it?"
+                }
+            },
         };
 
         public DailyRecipes GetDailyRecipe()

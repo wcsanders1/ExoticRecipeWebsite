@@ -100,6 +100,8 @@
     <Content Include="images\bowl_of_steaming_soup_clip_art_13404.jpg" />
     <Content Include="images\old_world_map.gif" />
     <Content Include="images\onions_with_ginger.gif" />
+    <Content Include="images\pepper-cilantro.gif" />
+    <Content Include="images\raw-pasta.gif" />
     <Content Include="images\salt_and_coffee.gif" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
