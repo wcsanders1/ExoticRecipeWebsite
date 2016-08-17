@@ -119,6 +119,7 @@ ul {
     display: flex;
     flex-direction: column;
     flex: 1;
+    position: relative;
 }
 
 .container-body-content::after {
@@ -301,8 +302,9 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: auto;
     width: 100%;
+    height: 100%;
+    position: absolute;
 }
 
 .contact-information img {
@@ -408,6 +410,7 @@ button {
 *****************************************/
 
 @media screen and (min-width: 1250px) {
+    
     .header-image-left,
     .header-image-right {
         height: 100px;
@@ -429,9 +432,46 @@ button {
     .instructions {
         width: 450px;
     }
+
+    .recipe-of-day-figure img:hover {
+        cursor: pointer;
+    }
+
+    #overlay {
+        z-index: 10;
+    }
 }
 
+/**************************************
+       OVERLAY
+***************************************/
 
+#overlay {
+    background: rgba(0,0,0, .7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+#overlay img {
+    align-self: center;
+    height: 600px;
+    width: 600px;
+}
+
+#overlay p {
+    color: #fff;
+    margin-top: 15px;
+    font-family: WinkBold;
+    font-size: 2em;
+}
 
 
 /*****************************************
