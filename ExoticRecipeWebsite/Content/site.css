@@ -247,6 +247,10 @@ button {
     border: solid;
 }
 
+.recipe-of-day-figure img {
+    position: relative;
+}
+
 .recipe-of-day-figure figcaption {
     font-family: Wonki;
     font-size: 1.25em;
@@ -471,6 +475,21 @@ button {
     margin-top: 15px;
     font-family: WinkBold;
     font-size: 2em;
+}
+
+
+/***************************************
+    TOOLTIP
+****************************************/
+
+.tooltip {
+    position: absolute;
+    border: 1px solid #333;
+    background-color: #161616;
+    border-radius: 5px;
+    padding: 10px;
+    color: #fff;
+    font-size: 12px;
 }
 
 
