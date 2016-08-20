@@ -24,13 +24,14 @@
                         </ul>
                     </div>
                     <div class="ingredient-amounts-list">
-                        <ul>
-                            <li>@(ingredient[1] + " " + ingredient[2])</li>
+                        <ul id="ingredient-amounts">
+                            <li class="numerical-amounts">@(ingredient[1] + " ")</li>
+                            <li class="amount-labels">@ingredient[2]</li>
                         </ul>
                     </div>
                 </div>
             }
-        <button type="submit">Serving Size</button>
+        <button id="ingredient-button" type="submit">Serving Size</button>
     </div>
     <div class="recipe-of-day">     
         <figure class="recipe-of-day-figure">

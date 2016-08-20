@@ -20,7 +20,7 @@ $(".recipe-of-day-figure img").click(function () {
 
 $overlay.click(function () {
     $(this).hide();
-})
+});
 
 $(window).resize(function () {
     $("#overlay").hide();
@@ -42,5 +42,32 @@ $(".recipe-of-day-figure img").hover(function () {
 }).mousemove(function (e) {
     var mousex = e.pageX - 50;
     var mousey = e.pageY - 390;
-    $(".tooltip").css({ top: mousey, left: mousex })
+    $(".tooltip").css({ top: mousey, left: mousex });
+});
+
+
+
+
+//********************* MAKING THE 'SUBMIT' BUTTON WORK FOR THE INGRDIENTS********
+
+var numericalAmounts = document.getElementsByClassName("numerical-amounts");
+var priorServingSize = parseFloat(document.getElementById("serving-size").value);
+var newIngredientAmount = 0;
+var newServingSize = 0;
+var priorIngredientAmount = 0;
+var newIngredientAmount = 0;
+
+$("#ingredient-button").click(function () {
+    newServingSize = parseFloat(document.getElementById("serving-size").value);
+
+    for (var i = 0; i < numericalAmounts.length; i++) {
+        priorIngredientAmount = parseFloat(numericalAmounts[i].innerHTML);
+
+        if (priorIngredientAmount > 0) {
+            newIngredientAmount = (priorIngredientAmount / priorServingSize) * newServingSize;
+            numericalAmounts[i].innerHTML = newIngredientAmount;
+        }
+    }
+
+    priorServingSize = newServingSize;
 });

@@ -58,7 +58,7 @@ namespace ExoticRecipeWebsite.Data
                 {
                     new string[] {"Helium", "44", "mls"},
                     new string[] {"Copper Wire", "3", "feet"},
-                    new string[] {"Brown Sugar", "", "a pinch"},
+                    new string[] {"Brown Sugar", null, "a pinch"},
                     new string[] {"Cidar", "2", "bowls"},
                     new string[] {"Sheep", "5", ""}
                 },
@@ -79,7 +79,7 @@ namespace ExoticRecipeWebsite.Data
                 RecipeIngredients = new string[][]
                 {
                     new string[] {"Ice", "2", "handles"},
-                    new string[] {"1996 Toyata Camry", "", ""},
+                    new string[] {"1996 Toyata Camry", "1", ""},
                     new string[] {"Ash", "5", "cups"},
                     new string[] {"Tepid Milk", "2", "tsp"}
                 },

@@ -64,6 +64,12 @@ ul {
     list-style: none;
 }
 
+.hidden-ingredient-amounts {
+    display: none;
+    width: 0;
+    height: 0;
+}
+
 
 
 /***************************************
@@ -201,11 +207,27 @@ footer p {
 
 .ingredient-names-list {
     flex: 2;
+    border-bottom: 1px dotted;
 }
 
 .ingredient-names-list ul li,
 .ingredient-amounts-list ul li {
     margin-bottom: 5px;   
+}
+
+#ingredient-amounts {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px dotted;
+}
+
+#ingredient-amounts .numerical-amounts {
+    width: 30px;
+    margin-left: -30px;
+}
+
+#ingredient-amounts .amount-labels {
+    margin-left: 30px;
 }
 
 .ingredient-amounts-list {
