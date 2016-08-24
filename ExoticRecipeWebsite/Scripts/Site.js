@@ -19,7 +19,7 @@ $(".recipe-of-day-figure img").click(function () {
 });
 
 $overlay.click(function () {
-    $(this).hide();
+    $(this).slideUp();
 });
 
 $(window).resize(function () {
@@ -41,7 +41,7 @@ $(".recipe-of-day-figure img").hover(function () {
     $(".tooltip").remove();
 }).mousemove(function (e) {
     var mousex = e.pageX - 50;
-    var mousey = e.pageY - 390;
+    var mousey = e.pageY - 300;
     $(".tooltip").css({ top: mousey, left: mousex });
 });
 

@@ -76,6 +76,22 @@ ul {
     HOME PAGE
 ****************************************/
 
+.recipe-scrollers {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+#recipe-scroll-right,
+#recipe-scroll-left {
+    background-color: gray;
+    width: 50px;
+    height: 50px;
+    margin: 5px;
+    text-align: center;
+}
+
 .recipe-of-day-container {
     display: flex;
     flex-direction: column;

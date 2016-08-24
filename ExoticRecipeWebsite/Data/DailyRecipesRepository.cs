@@ -8,6 +8,8 @@ namespace ExoticRecipeWebsite.Data
 {
     public class DailyRecipesRepository
     {
+        private static int priorRecipe;
+
         private static DailyRecipes[] _dailyRecipes = new DailyRecipes[]
         {
             new DailyRecipes()
@@ -94,10 +96,41 @@ namespace ExoticRecipeWebsite.Data
             },
         };
 
-        public DailyRecipes GetDailyRecipe()
+        public DailyRecipes GetNextDailyRecipe(string direction)
+        {
+            if (direction == "back" && priorRecipe == 0)
+            {
+                priorRecipe = (_dailyRecipes.Length - 1);
+                return _dailyRecipes[priorRecipe];
+            }
+            else if (direction == "back")
+            {
+                priorRecipe -= 1;
+                return _dailyRecipes[priorRecipe];
+            }
+            else if (direction == "forward" && priorRecipe == (_dailyRecipes.Length - 1))
+            {
+                priorRecipe = 0;
+                return _dailyRecipes[priorRecipe];
+            }
+            else if (direction == "forward")
+            {
+                priorRecipe += 1;
+                return _dailyRecipes[priorRecipe];
+            }
+            else if (priorRecipe == 1)
+            {
+                priorRecipe += 1;
+                return _dailyRecipes[priorRecipe];
+            }
+            else { return null; }
+        }
+
+        public DailyRecipes GetRandomDailyRecipe()
         {
             Random rnd = new Random();
             int recipeNum = rnd.Next(0, _dailyRecipes.Length);
+            priorRecipe = recipeNum;
             return _dailyRecipes[recipeNum];
         }
     }

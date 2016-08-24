@@ -20,13 +20,19 @@ namespace ExoticRecipeWebsite.Controllers
         // GET: Main
         public ActionResult Index()
         {
-            var dailyRecipe = _dailyRecipesRepository.GetDailyRecipe();
+            var dailyRecipe = _dailyRecipesRepository.GetRandomDailyRecipe();
             return View(dailyRecipe);
         }
 
         public ActionResult Contact()
         {
             return View();
+        }
+
+        public ActionResult ScrollRecipes()   // This is probably stupid
+        {
+            var dailyRecipe = _dailyRecipesRepository.GetNextDailyRecipe("forward");
+            return View("Index", dailyRecipe);
         }
     }
 }
