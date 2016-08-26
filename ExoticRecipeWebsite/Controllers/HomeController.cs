@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.UI;
 using ExoticRecipeWebsite.Models;
 using ExoticRecipeWebsite.Data;
 
 namespace ExoticRecipeWebsite.Controllers
 {
-        public class HomeController : Controller
+    public class HomeController : Controller
     {
+        
+
         private DailyRecipesRepository _dailyRecipesRepository = null;
 
         public HomeController()
@@ -29,9 +32,9 @@ namespace ExoticRecipeWebsite.Controllers
             return View();
         }
 
-        public ActionResult ScrollRecipes()   // This is probably stupid
+        public ActionResult ScrollRecipes(string direction)
         {
-            var dailyRecipe = _dailyRecipesRepository.GetNextDailyRecipe("forward");
+            var dailyRecipe = _dailyRecipesRepository.GetNextDailyRecipe(direction);
             return View("Index", dailyRecipe);
         }
     }

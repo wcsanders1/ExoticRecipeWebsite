@@ -32,8 +32,7 @@ $(window).resize(function () {
 var $tip = $("<p class='tooltip'>Click for larger view!</p>");
 
 $(".recipe-of-day-figure img").hover(function () {
-    if ($("#overlay").css("z-index") == 10)
-    {
+    if ($("#overlay").css("z-index") == 10) {
         $(".recipe-of-day-figure").append($tip);
         $tip.fadeIn("slow");
     }
@@ -41,7 +40,7 @@ $(".recipe-of-day-figure img").hover(function () {
     $(".tooltip").remove();
 }).mousemove(function (e) {
     var mousex = e.pageX - 50;
-    var mousey = e.pageY - 300;
+    var mousey = e.offsetY - 45;
     $(".tooltip").css({ top: mousey, left: mousex });
 });
 

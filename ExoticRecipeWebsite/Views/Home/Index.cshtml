@@ -4,7 +4,11 @@
     ViewBag.Title = "Index";
 }
 
-<button type="submit" value = "ScrollRecipes" onclick="location.href='@Url.Action("ScrollRecipes")'">Scroll</button>
+
+<div class="scroll-button-wrapper">
+    <button type="submit" value="scroll" id="scroll-button-back" onclick="location.href='@Url.Action("ScrollRecipes", new { direction = "back" })'"><</button>
+    <button type="submit" value="scroll" id="scroll-button-forward" onclick="location.href='@Url.Action("ScrollRecipes", new { direction = "forward" })'">></button>
+</div>
 
 <div class="recipe-name-container">
     <h1 class="title">@Model.RecipeTitle</h1>

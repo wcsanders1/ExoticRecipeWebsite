@@ -76,20 +76,19 @@ ul {
     HOME PAGE
 ****************************************/
 
-.recipe-scrollers {
+.scroll-button-wrapper {
     display: flex;
     flex-direction: row;
     width: 100%;
     justify-content: center;
+    align-content: center;
+    padding: 30px 0;
 }
 
-#recipe-scroll-right,
-#recipe-scroll-left {
-    background-color: gray;
-    width: 50px;
-    height: 50px;
-    margin: 5px;
-    text-align: center;
+#scroll-button-back,
+#scroll-button-forward{
+    max-width: 40px;
+    margin: 0;
 }
 
 .recipe-of-day-container {
@@ -188,7 +187,7 @@ footer p {
 }
 
 .recipe-name-container .title {
-    margin-top: 50px;
+
 }
 
 .ingredients {
