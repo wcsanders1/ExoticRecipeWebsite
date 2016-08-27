@@ -60,11 +60,12 @@ $("#ingredient-button").click(function () {
     newServingSize = parseFloat(document.getElementById("serving-size").value);
 
     for (var i = 0; i < numericalAmounts.length; i++) {
-        priorIngredientAmount = parseFloat(numericalAmounts[i].innerHTML);
+        priorIngredientAmount = parseFloat(numericalAmounts[i].innerText);
 
         if (priorIngredientAmount > 0) {
             newIngredientAmount = (priorIngredientAmount / priorServingSize) * newServingSize;
-            numericalAmounts[i].innerHTML = newIngredientAmount;
+            newIngredientAmount = Math.round(newIngredientAmount * 100) / 100;
+            numericalAmounts[i].innerText = newIngredientAmount;
         }
     }
 
