@@ -3,11 +3,10 @@
 $("#btn-load-data").click(function () {
     console.log("this is clicking");
     $.ajax({
-        type: "POST",
-        url: "GetTable",
+        type: "GET",
+        url: searchUrl,
         data: "{}",
         dataType: "json",
-        contentType: "application/json; charset-8",
         success: OnSuccess,
         error: OnError
     });

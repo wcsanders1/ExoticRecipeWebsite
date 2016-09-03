@@ -136,6 +136,7 @@
     <Content Include="fonts\Wonkie.eot" />
     <Content Include="fonts\Wonkie.ttf" />
     <Content Include="fonts\Wonkie.woff" />
+    <Compile Include="Controllers\DataController.cs" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

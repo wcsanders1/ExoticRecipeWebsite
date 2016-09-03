@@ -1,6 +1,4 @@
-﻿
-
-@{
+﻿@{
     ViewBag.Title = "Search";
 }
 
@@ -8,12 +6,14 @@
 
 
 
-<asp:Content runat="server">
+
     <h3>Load database data using JQuery</h3>
     <button id="btn-load-data" type="submit">Load Data</button>
     <div id="update-panel">
 
     </div>
-</asp:Content>
 
-<script src="~/Scripts/search.js"></script>
+<script type="text/javascript">
+    var searchUrl = "@Url.Action("GetAllTables", "Data")";
+</script>
+<script src="~/Scripts/search.js" ></script>
