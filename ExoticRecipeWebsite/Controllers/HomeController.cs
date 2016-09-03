@@ -6,6 +6,8 @@ using System.Web.Mvc;
 using System.Web.UI;
 using ExoticRecipeWebsite.Models;
 using ExoticRecipeWebsite.Data;
+using System.Web.Services;
+using System.Web.Script.Services;
 
 namespace ExoticRecipeWebsite.Controllers
 {
@@ -25,6 +27,11 @@ namespace ExoticRecipeWebsite.Controllers
         {
             var dailyRecipe = _dailyRecipesRepository.GetRandomDailyRecipe();
             return View(dailyRecipe);
+        }
+
+        public ActionResult Search()
+        {
+            return View();
         }
 
         public ActionResult Contact()

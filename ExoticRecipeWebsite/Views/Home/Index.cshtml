@@ -4,7 +4,6 @@
     ViewBag.Title = "Index";
 }
 
-
 <div class="scroll-button-wrapper">
     <button type="submit" value="scroll" id="scroll-button-back" onclick="location.href='@Url.Action("ScrollRecipes", new { direction = "back" })'"><</button>
     <button type="submit" value="scroll" id="scroll-button-forward" onclick="location.href='@Url.Action("ScrollRecipes", new { direction = "forward" })'">></button>
@@ -55,3 +54,5 @@
         </ol>
     </div>
 </div>
+
+<script src="~/Scripts/site.js"></script>

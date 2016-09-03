@@ -8,6 +8,14 @@
     <link href="~/Content/normalize.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/site.css" rel="stylesheet" type="text/css" />    
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
+
+    <script src="~/Scripts/jquery-1.10.2.intellisense.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    @*<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>*@
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
 </head>
 <body>
     <header class="main-header clearfix">
@@ -16,7 +24,7 @@
             <h1 class="header-title">Exotic Recipies</h1>
             <ul class="header-menu">
                 <li><a href="@Url.Action("Index")">Home</a></li>
-                <li>Search</li>
+                <li><a href="@Url.Action("Search")">Search</a></li>
                 <li>About</li>
                 <li><a href="@Url.Action("Contact")" id="contact-page">Contact</a></li>
             </ul>
@@ -31,12 +39,5 @@
             <p>&copy; @DateTime.Now.Year - Bill Sanders</p>
         </footer>
 
-    <script src="~/Scripts/jquery-1.10.2.intellisense.js"></script>
-    <script src="~/Scripts/jquery-1.10.2.js"></script>
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
-
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/site.js"></script>
 </body>
 </html>
