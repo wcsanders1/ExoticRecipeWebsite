@@ -1,7 +1,8 @@
 ﻿/*****************  AJAX TO DATABASE ON SEARCH PAGE   ************************/
 
+var recipesDB;
+
 $("#btn-load-data").click(function () {
-    console.log("this is clicking");
     $.ajax({
         type: "GET",
         url: searchUrl,
@@ -13,13 +14,46 @@ $("#btn-load-data").click(function () {
 });
 
 function OnSuccess(data) {
-    var content;
+    var content = "";
+    recipesDB = data;
     for (var i = 0; i < data.length; i++) {
-        content += "<p>" + data[i].recipeNameDB + "</p>";
+        content += "<p class='recipes-in-panel' id=" + data[i].recipeOrderDB + ">" + data[i].recipeNameDB + "</p>";
     }
-    $("#update-panel").html(content);
+    $("#recipe-panel").html("");
+    $("#recipe-panel").html(content);
+
+    var recipesInPanel = document.getElementsByClassName("recipes-in-panel");
+
+    for (var i = 0; i < recipesInPanel.length; i++) {
+        recipesInPanel[i].onclick = recipesClick;
+    }
 }
 
 function OnError(data) {
+
+}
+
+function recipesClick() {
+    var index = parseInt(this.id);
+    var contentDescription = "";
+    var contentInstructions = "";
+    var instruction = 1;
+
+    contentDescription = "<p>" + recipesDB[index].recipeDescriptionDB + "</p>";
+    $("#recipe-description").html("");
+    $("#recipe-description").html(contentDescription);
+
+
+    var parseContent = JSON.parse(recipesDB[index].recipeInstructionsDB);
+
+    for (i in parseContent)
+    {      
+        var index = instruction.toString();
+        contentInstructions += "<p>" + i + ". " + parseContent[index] + "</p>";
+        instruction++;
+    }
+
+    $("#recipe-instructions").html("");
+    $("#recipe-instructions").html(contentInstructions);
 
 }

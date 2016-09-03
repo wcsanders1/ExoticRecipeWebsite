@@ -4,20 +4,20 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="siteDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="siteDatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Table">
           <Key>
             <PropertyRef Name="recipeOrderDB" />
           </Key>
           <Property Name="recipeNameDB" Type="text" Nullable="false" />
           <Property Name="recipeOrderDB" Type="int" Nullable="false" />
-          <Property Name="recipeDescriptionDB" Type="text" Nullable="false" />
+          <Property Name="recipeDescriptionDB" Type="text" />
+          <Property Name="recipeInstructionsDB" Type="text" />
         </EntityType>
         <EntityContainer Name="siteDatabaseModelStoreContainer">
           <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="siteDatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -27,7 +27,8 @@
           </Key>
           <Property Name="recipeNameDB" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="recipeOrderDB" Type="Int32" Nullable="false" />
-          <Property Name="recipeDescriptionDB" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="recipeDescriptionDB" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="recipeInstructionsDB" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityContainer Name="siteDatabaseEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Tables" EntityType="Self.Table" />
@@ -41,6 +42,7 @@
           <EntitySetMapping Name="Tables">
             <EntityTypeMapping TypeName="siteDatabaseModel.Table">
               <MappingFragment StoreEntitySet="Table">
+                <ScalarProperty Name="recipeInstructionsDB" ColumnName="recipeInstructionsDB" />
                 <ScalarProperty Name="recipeNameDB" ColumnName="recipeNameDB" />
                 <ScalarProperty Name="recipeOrderDB" ColumnName="recipeOrderDB" />
                 <ScalarProperty Name="recipeDescriptionDB" ColumnName="recipeDescriptionDB" />
