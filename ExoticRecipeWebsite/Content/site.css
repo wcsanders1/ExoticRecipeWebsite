@@ -336,6 +336,27 @@ button {
 
 
 /*********************************
+    SEARCH PAGE
+**********************************/
+
+#image-text {
+    height: 200px;
+    width: 200px;
+}
+
+#search-wrapper {
+    max-height: 300px;
+    overflow-y: scroll;
+    width: 120px;
+}
+
+.search-image {
+    height: 100px;
+    width: 100px;
+    margin: 5px 0;
+}
+
+/*********************************
     CONTACT PAGE
 **********************************/
 .contact-page-wrapper {
@@ -362,7 +383,6 @@ button {
 #recipe-panel p {
     border: 1px solid;
 }
-
 
 
 

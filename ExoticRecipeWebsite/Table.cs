@@ -18,5 +18,7 @@ namespace ExoticRecipeWebsite
         public int recipeOrderDB { get; set; }
         public string recipeDescriptionDB { get; set; }
         public string recipeInstructionsDB { get; set; }
+        public string recipeImageDB { get; set; }
+        public string recipeIngredientsDB { get; set; }
     }
 }
