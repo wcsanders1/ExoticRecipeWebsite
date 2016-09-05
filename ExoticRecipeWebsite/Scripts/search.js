@@ -26,9 +26,12 @@ function OnSuccess(data) {
     var $homeSelector = $("<li class='navigation-selector'><a href='#'>Home</a></li>");
     var $images = [];
     var imageText;
+
+    data.sort(function (a, b) { return a.recipeNameDB.localeCompare(b.recipeNameDB); });
+
     recipesDB = data;
-    for (var i = 0; i < data.length; i++) {
-        content += "<p class='recipes-in-panel' id=" + data[i].recipeOrderDB + ">" + data[i].recipeNameDB + "</p>";
+    for (var i = 0; i < recipesDB.length; i++) {
+        content += "<p class='recipes-in-panel' id=" + recipesDB[i].recipeOrderDB + ">" + recipesDB[i].recipeNameDB + "</p>";
     }
     $("#recipe-panel").html("");
     $("#recipe-panel").html(content);
