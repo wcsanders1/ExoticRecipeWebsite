@@ -1,16 +1,17 @@
-﻿@model ExoticRecipeWebsite.Models.DailyRecipes
-
-@{
+﻿@{
     ViewBag.Title = "Index";
 }
 
 <div class="scroll-button-wrapper">
-    <button type="submit" value="scroll" id="scroll-button-back" onclick="location.href='@Url.Action("ScrollRecipes", new { direction = "back" })'"><</button>
-    <button type="submit" value="scroll" id="scroll-button-forward" onclick="location.href='@Url.Action("ScrollRecipes", new { direction = "forward" })'">></button>
+    <script type="text/javascript">
+        var searchUrl = "@Url.Action("GetAllTables", "Data")";
+    </script>
+    <button type="submit" value="scroll" id="scroll-button-back"><</button>
+    <button type="submit" value="scroll" id="scroll-button-forward">></button>
 </div>
 
 <div class="recipe-name-container">
-    <h1 class="title">@Model.RecipeTitle</h1>
+    <h1 class="title" id="recipe-name"></h1>
 </div>
 
 <div class="recipe-of-day-container">
@@ -20,37 +21,21 @@
             <label for="serving-size">Serving Size:</label>
             <input type="number" id="serving-size" name="serving_size" value="4" min="1" max="20" maxlength="2" />
         </form>
-            @foreach (string[] ingredient in Model.RecipeIngredients)
-            {
-                <div class="ingredient-lists-container">
-                    <div class="ingredient-names-list"> 
-                        <ul>
-                            <li>@(ingredient[0] + ": ")</li>
-                        </ul>
-                    </div>
-                    <div class="ingredient-amounts-list">
-                        <ul id="ingredient-amounts">
-                            <li class="numerical-amounts">@(ingredient[1] + " ")</li>
-                            <li class="amount-labels">@ingredient[2]</li>
-                        </ul>
-                    </div>
-                </div>
-            }
+        <div id="ingredients-container">
+            @*FILLED IN BY SITE.JS*@
+        </div>
         <button id="ingredient-button" type="submit">Serving Size</button>
     </div>
-    <div class="recipe-of-day">     
+    <div class="recipe-of-day">
         <figure class="recipe-of-day-figure">
-            <img src="@Model.RecipeImage" width="300" height="300" />     
-            <figcaption>@Model.RecipeCaption</figcaption>
+            <img id="recipe-image" width="300" height="300" />
+            <figcaption id="recipe-caption"></figcaption>
         </figure>
     </div>
     <div class="instructions">
         <h1 class="instructions-headline">Instructions:</h1>
-        <ol>
-            @foreach (string instruction in Model.RecipeInstructions)
-            {
-                <li>@instruction</li>
-            }
+        <ol id="instructions-container">
+            @*FILLED IN BY SITE.JS*@
         </ol>
     </div>
 </div>

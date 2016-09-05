@@ -36,5 +36,14 @@ namespace ExoticRecipeWebsite.Controllers
 
             return new JsonResult { Data = _allTables, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
+
+        public void SaveTable(Table table)
+        {
+            using (siteDatabaseEntities dc = new siteDatabaseEntities())
+            {
+                dc.Tables.Add(table);
+                
+            }
+        }
     }
 }

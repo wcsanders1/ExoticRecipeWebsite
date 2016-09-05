@@ -27,11 +27,10 @@ function OnSuccess(data) {
     var $images = [];
     var imageText;
 
-    data.sort(function (a, b) { return a.recipeNameDB.localeCompare(b.recipeNameDB); });
+    recipesDB = data.sort(function (a, b) { return a.recipeNameDB.localeCompare(b.recipeNameDB); });
 
-    recipesDB = data;
     for (var i = 0; i < recipesDB.length; i++) {
-        content += "<p class='recipes-in-panel' id=" + recipesDB[i].recipeOrderDB + ">" + recipesDB[i].recipeNameDB + "</p>";
+        content += "<p class='recipes-in-panel' id=" + i + ">" + recipesDB[i].recipeNameDB + "</p>";
     }
     $("#recipe-panel").html("");
     $("#recipe-panel").html(content);
@@ -99,7 +98,6 @@ function recipesClick() {
 
     for (i in parseIngredients)
     {
-        console.log("looping");
         ingredientsInstructionIndex = ingredientsInstruction.toString();
         contentIngredients += "<p>" + ingredientsInstruction + ". " +
             parseIngredients[i].Ingredient + ": " +

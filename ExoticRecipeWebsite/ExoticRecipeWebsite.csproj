@@ -119,6 +119,7 @@
     <Content Include="images\raw-pasta.gif" />
     <Content Include="images\salt_and_coffee.gif" />
     <Content Include="images\Syrian-waffles.gif" />
+    <Content Include="images\Tazmanian_sizzler.gif" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\Handi.otf" />
@@ -160,6 +161,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Data\DailyRecipesRepository.cs" />
+    <Compile Include="Data\RecipesSeedData.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
