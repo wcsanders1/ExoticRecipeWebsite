@@ -15,8 +15,8 @@ namespace ExoticRecipeWebsite.Data
                 recipeImageDB = "../images/Tazmanian_sizzler.gif",
                 recipeDescriptionDB = "Legend has it that if you eat too much of this mysterious dinner, you'll achieve interesting feats. So in the interest of caution, try to control yourself and take small bites!",
                 recipeIngredientsDB = "[{\"Ingredient\": \"Bark\", \"Amount\": \"34\", \"Measurement\": \"piece\"}, {\"Ingredient\": \"Bay Leaves\", \"Amount\": \"2\", \"Measurement\": \"head\"}, {\"Ingredient\": \"Seeds\", \"Amount\": \"8\", \"Measurement\": \"oz\"}]",
-                recipeInstructionsDB = "{\"1\": \"Wash all of the utensils for safety.\", \"2\": \"Determine the proper value of money.\"}",
-                recipeOrderDB = 6
+                recipeInstructionsDB = "{\"1\": \"Wash all of the utensils for safety.\", \"2\": \"Determine the proper value of money.\"}"
+                //recipeOrderDB = 6
             };
 
             using (siteDatabaseEntities dc = new siteDatabaseEntities())

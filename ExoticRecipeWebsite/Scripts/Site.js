@@ -115,6 +115,8 @@ $(document).ready(function () {
 
 
 function SetRecipe(recipe) {
+    $("#serving-size").val(4);
+
     var $recipeImage = $("#recipe-image");
     var $recipeName = $("#recipe-name");
     var $recipeCaption = $("#recipe-caption");
@@ -173,7 +175,6 @@ $("#scroll-button-back").click(function () {
     }
 
     SetRecipe(recipeNum);
-    console.log(recipeNum);
 });
 
 $("#scroll-button-forward").click(function () {
@@ -184,7 +185,6 @@ $("#scroll-button-forward").click(function () {
     }
 
     SetRecipe(recipeNum);
-    console.log(recipeNum);
 });
 
 

@@ -10,7 +10,7 @@
             <PropertyRef Name="recipeOrderDB" />
           </Key>
           <Property Name="recipeNameDB" Type="text" Nullable="false" />
-          <Property Name="recipeOrderDB" Type="int" Nullable="false" />
+          <Property Name="recipeOrderDB" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="recipeDescriptionDB" Type="text" />
           <Property Name="recipeInstructionsDB" Type="text" />
           <Property Name="recipeImageDB" Type="text" />
@@ -28,7 +28,7 @@
             <PropertyRef Name="recipeOrderDB" />
           </Key>
           <Property Name="recipeNameDB" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="recipeOrderDB" Type="Int32" Nullable="false" />
+          <Property Name="recipeOrderDB" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="recipeDescriptionDB" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="recipeInstructionsDB" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="recipeImageDB" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />

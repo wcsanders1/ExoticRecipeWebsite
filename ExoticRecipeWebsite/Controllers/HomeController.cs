@@ -26,7 +26,7 @@ namespace ExoticRecipeWebsite.Controllers
         public ActionResult Index()
         {
             //var dailyRecipe = _dailyRecipesRepository.GetRandomDailyRecipe();
-            //RecipesSeedData.EnsureSeedData();  THIS WORKS, BUT ONLY ONCE; NEED TO FINISH
+            //RecipesSeedData.EnsureSeedData(); //THIS WORKS, BUT ONLY ONCE; NEED TO FINISH
 
             return View();
         }
