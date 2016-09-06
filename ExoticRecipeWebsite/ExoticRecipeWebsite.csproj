@@ -108,6 +108,9 @@
     <Content Include="Content\normalize.css" />
     <Content Include="Content\site.css" />
     <Content Include="App_Data\dbo.recipeTable.sql" />
+    <Content Include="fonts\Font Awesome\css\font-awesome.css" />
+    <Content Include="fonts\Font Awesome\css\font-awesome.min.css" />
+    <Content Include="fonts\Font Awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="images\Bill_picture.gif" />
@@ -139,6 +142,39 @@
     <Content Include="fonts\Wonkie.ttf" />
     <Content Include="fonts\Wonkie.woff" />
     <Compile Include="Controllers\DataController.cs" />
+    <Content Include="fonts\Font Awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\Font Awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\Font Awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\Font Awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\Font Awesome\fonts\FontAwesome.otf" />
+    <Content Include="fonts\Font Awesome\less\animated.less" />
+    <Content Include="fonts\Font Awesome\less\bordered-pulled.less" />
+    <Content Include="fonts\Font Awesome\less\core.less" />
+    <Content Include="fonts\Font Awesome\less\fixed-width.less" />
+    <Content Include="fonts\Font Awesome\less\font-awesome.less" />
+    <Content Include="fonts\Font Awesome\less\icons.less" />
+    <Content Include="fonts\Font Awesome\less\larger.less" />
+    <Content Include="fonts\Font Awesome\less\list.less" />
+    <Content Include="fonts\Font Awesome\less\mixins.less" />
+    <Content Include="fonts\Font Awesome\less\path.less" />
+    <Content Include="fonts\Font Awesome\less\rotated-flipped.less" />
+    <Content Include="fonts\Font Awesome\less\screen-reader.less" />
+    <Content Include="fonts\Font Awesome\less\stacked.less" />
+    <Content Include="fonts\Font Awesome\less\variables.less" />
+    <Content Include="fonts\Font Awesome\scss\font-awesome.scss" />
+    <Content Include="fonts\Font Awesome\scss\_animated.scss" />
+    <Content Include="fonts\Font Awesome\scss\_bordered-pulled.scss" />
+    <Content Include="fonts\Font Awesome\scss\_core.scss" />
+    <Content Include="fonts\Font Awesome\scss\_fixed-width.scss" />
+    <Content Include="fonts\Font Awesome\scss\_icons.scss" />
+    <Content Include="fonts\Font Awesome\scss\_larger.scss" />
+    <Content Include="fonts\Font Awesome\scss\_list.scss" />
+    <Content Include="fonts\Font Awesome\scss\_mixins.scss" />
+    <Content Include="fonts\Font Awesome\scss\_path.scss" />
+    <Content Include="fonts\Font Awesome\scss\_rotated-flipped.scss" />
+    <Content Include="fonts\Font Awesome\scss\_screen-reader.scss" />
+    <Content Include="fonts\Font Awesome\scss\_stacked.scss" />
+    <Content Include="fonts\Font Awesome\scss\_variables.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -215,6 +251,7 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -85,10 +85,23 @@ ul {
     padding: 30px 0;
 }
 
-#scroll-button-back,
-#scroll-button-forward{
-    max-width: 40px;
-    margin: 0;
+.scroll-buttons {
+    max-width: 50px;
+    padding: 10px;
+    margin: 5px;
+    background-color: blue;
+}
+
+#pause-scroll {
+    background-color: red;
+}
+
+#play-scroll {
+    background-color: #4bc970
+}
+
+.scroll-button-highlight {
+    border: 1px solid;
 }
 
 .recipe-of-day-container {
@@ -249,7 +262,7 @@ footer p {
     flex: 1;
 }
 
-button {
+#ingredient-button {
   padding: 0;
   color: #FFF;
   background-color: #4bc970;
