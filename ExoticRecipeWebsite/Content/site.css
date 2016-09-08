@@ -76,7 +76,7 @@ ul {
     HOME PAGE
 ****************************************/
 
-.scroll-button-wrapper {
+#scroll-button-wrapper {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -184,7 +184,7 @@ footer p {
 .recipe-name-container {
     display: flex;
     width: 100%;
-    margin-bottom: 50px;
+    margin: 50px 0;
     align-content: center;
     justify-content: center;
     font-family: WinkBold;
@@ -523,6 +523,17 @@ footer p {
 
     #overlay {
         z-index: 10;
+    }
+
+    #scroll-button-and-author-wrapper {
+        margin-top: auto;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #scroll-button-wrapper {
+        width: auto;
     }
 }
 

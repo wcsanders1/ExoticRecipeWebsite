@@ -2,22 +2,12 @@
     ViewBag.Title = "Index";
 }
 
-<div class="scroll-button-wrapper">
-    <script type="text/javascript">
-        var searchUrl = "@Url.Action("GetAllTables", "Data")";
-    </script>
-    <button class="fa fa-step-backward scroll-buttons" type="submit" value="scroll" id="scroll-button-back"></button>
-    <button class="fa fa-step-forward scroll-buttons" type="submit" value="scroll" id="scroll-button-forward"></button>
-    <button class="fa fa-pause scroll-buttons" id="pause-scroll"></button>
-    <button class="fa fa-play scroll-buttons" id="play-scroll"></button>
-</div>
-
 <div class="recipe-name-container">
     <h1 class="title" id="recipe-name"></h1>
 </div>
 
-<div class="recipe-of-day-container">
-    <div class="ingredients">
+<div id="recipe-of-day-container" class="recipe-of-day-container">
+    <div id="ingredients" class="ingredients">
         <h1 class="ingredients-headline">Ingredients:</h1>
         <form class="serving-size-input" type="text" action="index.html" method="post">
             <label for="serving-size">Serving Size:</label>
@@ -28,13 +18,31 @@
         </div>
         <button id="ingredient-button" type="submit">Serving Size</button>
     </div>
+
     <div class="recipe-of-day">
         <figure class="recipe-of-day-figure">
             <img id="recipe-image" width="300" height="300" />
             <figcaption id="recipe-caption"></figcaption>
         </figure>
     </div>
-    <div class="instructions">
+
+    <div id="scroll-button-and-author-wrapper">
+        <div id="scroll-button-wrapper">
+            <script type="text/javascript">
+                var searchUrl = "@Url.Action("GetAllTables", "Data")";
+            </script>
+            <button class="fa fa-step-backward scroll-buttons" type="submit" value="scroll" id="scroll-button-back"></button>
+            <button class="fa fa-step-forward scroll-buttons" type="submit" value="scroll" id="scroll-button-forward"></button>
+            <button class="fa fa-pause scroll-buttons" id="pause-scroll"></button>
+            <button class="fa fa-play scroll-buttons" id="play-scroll"></button>
+        </div>
+        <div id="author-wrapper">
+            <p class="author">Recipe submitted by:</p>
+            <p class="author">@*FILLED IN BY JS*@</p>
+        </div>
+    </div>
+
+    <div id="instructions" class="instructions">
         <h1 class="instructions-headline">Instructions:</h1>
         <ol id="instructions-container">
             @*FILLED IN BY SITE.JS*@

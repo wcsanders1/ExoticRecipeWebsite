@@ -2,8 +2,36 @@
 
 var loop = false;
 var timer;
+var initialServingSize = $("#serving-size").val();
+var priorServingSize = initialServingSize;             //parseFloat(document.getElementById("serving-size").value);
 
-//*******************   OVERLAY FOR HOMEPAGE   ******************************
+
+/*****************   SCROLL-BUTTON-WRAPPER POSITIONING   *******************/
+
+function PositionScrollButtonAndAuthorWrapper() {
+    $scrollButtonAndAuthorWrapper = $("#scroll-button-and-author-wrapper");
+    $recipeOfDayContainer = $("#recipe-of-day-container");
+
+    //for other sizes ...
+
+    // for large size
+    if ($("#overlay").css("z-index") == 10) {
+        console.log("resizing");
+        $recipeOfDayContainer.after($scrollButtonAndAuthorWrapper);
+    }
+}
+
+$(window).resize(function () {
+    PositionScrollButtonAndAuthorWrapper();
+});
+
+$(document).ready(function () {
+    PositionScrollButtonAndAuthorWrapper();
+})
+
+
+
+/*******************   OVERLAY FOR HOMEPAGE   ******************************/
 
 var $overlay = $("<div id='overlay'></div>");
 var $caption = $("<p></p>");
@@ -57,7 +85,6 @@ $(".recipe-of-day-figure img").hover(function () {
 //*********************   MAKING THE 'SUBMIT' BUTTON WORK FOR THE INGRDIENTS  *****************************
 
 var numericalAmounts = document.getElementsByClassName("numerical-amounts");
-var priorServingSize = parseFloat(document.getElementById("serving-size").value);
 var newIngredientAmount = 0;
 var newServingSize = 0;
 var priorIngredientAmount = 0;
@@ -111,13 +138,13 @@ function GetRandomRecipe(length) {
 }
 
 $(document).ready(function () {
-
+    
     CallDatabase();
 
     recipeNum = GetRandomRecipe(recipesDB.length);
 
     SetRecipe(recipeNum);
-    console.log(recipeNum);
+    console.log("initial recipeNum: " + recipeNum);
 
     loop = true;
     timer = setInterval(function () { loopRecipes(loop); }, 7000);
@@ -133,7 +160,8 @@ function resetTimer() {
 var $recipeElements = $("#recipe-image,#recipe-name,#recipe-caption,#ingredients-container,#instructions-container");
 
 function SetRecipe(recipe) {
-    $("#serving-size").val(4);
+    $("#serving-size").val(initialServingSize);
+    priorServingSize = initialServingSize;
 
     var $recipeImage = $("#recipe-image");
     var $recipeName = $("#recipe-name");
@@ -224,27 +252,23 @@ $("#play-scroll").click(function () {
 /****************************   ITERATE RECIPES ON TIMER   ******************************/
 
 function loopRecipes(loop) {
-
+    
     var $ingredientButton = $("#ingredient-button");
 
     if (loop) {
         $ingredientButton.prop("disabled", true);
-        $recipeElements.fadeOut("slow", function () {
-            recipeNum++;
+        recipeNum++;
+        console.log("recipeNum after loop: " + recipeNum);
 
+        $recipeElements.fadeOut("slow", function () {
             if (recipeNum >= recipesDB.length) {
                 recipeNum = 0;
             }
-                
+
             $recipeElements.empty();
             SetRecipe(recipeNum);
-            $recipeElements.fadeIn();
+            $recipeElements.fadeIn("slow");
             $ingredientButton.prop("disabled", false);
         });
-    }
-
+     }
 }
-
-$("#test-button").click(function () {
-    loopRecipes(true);
-});
