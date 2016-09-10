@@ -403,7 +403,7 @@ footer p {
 /***************************************************************************************
     FOR SEMI-SEMI-FULL-SCREEN SIZE
 ****************************************************************************************/
-@media screen and (min-width: 850px) {
+@media screen and (min-width: 900px) {
     
     .header-menu li {
         display: inline-block;
@@ -428,14 +428,13 @@ footer p {
     .recipe-of-day {
         margin-left: auto;
         margin-right: 5%;
-
+        align-self: flex-start;
     }
 
     .ingredients {
         left: 0;
         align-self: flex-start;
-        position: absolute;
-        order: 0;
+        order: -1;
         border-left: 0;
         margin-top: 0;
     }
@@ -452,6 +451,26 @@ footer p {
         align-self: flex-start;
         border-left: 0;
         border-right: 0;
+    }
+
+    #overlay {
+        z-index: 8;   /* this # used to sync jquery with css w/r/t responsiveness */
+    }
+
+    #scroll-button-and-author-wrapper {
+        display: flex;
+        flex-direction: column;
+        order: -2;
+        position: absolute;
+        top: 50px;
+    }
+
+    #scroll-button-wrapper {
+        width: auto;
+    }
+
+    #author-wrapper {
+        text-align: center;
     }
 }
 
@@ -483,6 +502,25 @@ footer p {
         right: 0;
         margin-top: 0;
         border-left: solid;
+    }
+
+    #ingredients {
+        position: absolute;
+    }
+
+    #overlay {
+        z-index: 9;
+    }
+
+    #scroll-button-and-author-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        position: relative;
+        margin-top: auto;
+        width: 100% !important;
+        left: 0 !important;
+        top: 0;
+        order: 1;
     }
 }
 
@@ -523,17 +561,6 @@ footer p {
 
     #overlay {
         z-index: 10;
-    }
-
-    #scroll-button-and-author-wrapper {
-        margin-top: auto;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    #scroll-button-wrapper {
-        width: auto;
     }
 }
 

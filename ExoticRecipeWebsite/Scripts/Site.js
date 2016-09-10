@@ -4,18 +4,32 @@ var loop = false;
 var timer;
 var initialServingSize = $("#serving-size").val();
 var priorServingSize = initialServingSize;             //parseFloat(document.getElementById("serving-size").value);
+$ingredients = $("#ingredients");
+$recipeOfDayContainer = $("#recipe-of-day-container");
 
 
 /*****************   SCROLL-BUTTON-WRAPPER POSITIONING   *******************/
 
 function PositionScrollButtonAndAuthorWrapper() {
     $scrollButtonAndAuthorWrapper = $("#scroll-button-and-author-wrapper");
-    $recipeOfDayContainer = $("#recipe-of-day-container");
+    $recipeImage = $("#recipe-image");
+    $recipeImagePosition = $recipeImage.offset();
 
-    //for other sizes ...
+    //for semi-semi-full screen size
+    if ($("#overlay").css("z-index") == 8) {
+        var ingredientsWidth = $ingredients.outerWidth();
+        var rightPosition = $recipeImagePosition.left;
+        var thisWidth = rightPosition - ingredientsWidth;
 
-    // for large size
-    if ($("#overlay").css("z-index") == 10) {
+        console.log(thisWidth);
+
+        $recipeOfDayContainer.append($scrollButtonAndAuthorWrapper);
+        $scrollButtonAndAuthorWrapper.offset({ left: ingredientsWidth });
+        $scrollButtonAndAuthorWrapper.outerWidth(thisWidth);
+    }
+
+    // for full and semi-full screen size
+    if ($("#overlay").css("z-index") >= 9) {
         console.log("resizing");
         $recipeOfDayContainer.after($scrollButtonAndAuthorWrapper);
     }
@@ -23,12 +37,25 @@ function PositionScrollButtonAndAuthorWrapper() {
 
 $(window).resize(function () {
     PositionScrollButtonAndAuthorWrapper();
+    //PositionInstructions();
 });
 
 $(document).ready(function () {
     PositionScrollButtonAndAuthorWrapper();
+    //PositionInstructions();
 })
 
+
+
+/*******************   INSTRUCTIONS POSITIONING   ***************************/
+
+function PositionInstructions() {
+    $instructions = $("#instructions");
+
+    if ($("#overlay").css("z-index") == 8) {
+        $recipeOfDayContainer.after($instructions);
+    }
+}
 
 
 /*******************   OVERLAY FOR HOMEPAGE   ******************************/
@@ -144,7 +171,6 @@ $(document).ready(function () {
     recipeNum = GetRandomRecipe(recipesDB.length);
 
     SetRecipe(recipeNum);
-    console.log("initial recipeNum: " + recipeNum);
 
     loop = true;
     timer = setInterval(function () { loopRecipes(loop); }, 7000);
@@ -258,7 +284,6 @@ function loopRecipes(loop) {
     if (loop) {
         $ingredientButton.prop("disabled", true);
         recipeNum++;
-        console.log("recipeNum after loop: " + recipeNum);
 
         $recipeElements.fadeOut("slow", function () {
             if (recipeNum >= recipesDB.length) {
