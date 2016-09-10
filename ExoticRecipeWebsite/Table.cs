@@ -20,5 +20,6 @@ namespace ExoticRecipeWebsite
         public string recipeInstructionsDB { get; set; }
         public string recipeImageDB { get; set; }
         public string recipeIngredientsDB { get; set; }
+        public string recipeAuthorDB { get; set; }
     }
 }

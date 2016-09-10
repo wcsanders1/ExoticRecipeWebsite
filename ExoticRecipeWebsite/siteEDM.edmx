@@ -15,6 +15,7 @@
           <Property Name="recipeInstructionsDB" Type="text" />
           <Property Name="recipeImageDB" Type="text" />
           <Property Name="recipeIngredientsDB" Type="text" />
+          <Property Name="recipeAuthorDB" Type="text" />
         </EntityType>
         <EntityContainer Name="siteDatabaseModelStoreContainer">
           <EntitySet Name="Table" EntityType="Self.Table" Schema="dbo" store:Type="Tables" />
@@ -33,6 +34,7 @@
           <Property Name="recipeInstructionsDB" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="recipeImageDB" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="recipeIngredientsDB" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="recipeAuthorDB" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityContainer Name="siteDatabaseEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Tables" EntityType="Self.Table" />
@@ -46,6 +48,7 @@
           <EntitySetMapping Name="Tables">
             <EntityTypeMapping TypeName="siteDatabaseModel.Table">
               <MappingFragment StoreEntitySet="Table">
+                <ScalarProperty Name="recipeAuthorDB" ColumnName="recipeAuthorDB" />
                 <ScalarProperty Name="recipeIngredientsDB" ColumnName="recipeIngredientsDB" />
                 <ScalarProperty Name="recipeImageDB" ColumnName="recipeImageDB" />
                 <ScalarProperty Name="recipeInstructionsDB" ColumnName="recipeInstructionsDB" />

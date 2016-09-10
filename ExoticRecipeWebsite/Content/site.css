@@ -89,20 +89,37 @@ ul {
     max-width: 50px;
     padding: 10px;
     margin: 5px;
-    background-color: blue;
+    background-color: #1A5276;
+    box-shadow:  -10px -10px 10px rgba(60,60,60, 1);
+    color: aliceblue;
+}
+
+.scroll-buttons:active,
+.scroll-buttons.activeCustom {
+    box-shadow:  -5px -5px 5px rgba(60,60,60, 1);
+    transform: translateY(-5px);
 }
 
 #pause-scroll {
-    background-color: red;
+    background-color: #922B21;
+
 }
 
 #play-scroll {
-    background-color: #4bc970
+    background-color: #196F3D;
 }
 
-.scroll-button-highlight {
-    border: 1px solid;
+#author-wrapper {
+    text-align: left;
+    width: auto;
+    font-family: Idion, sans-serif;
+    font-size: 1.2em;
 }
+
+#scroll-button-and-author-wrapper{
+   align-content: center;
+}
+
 
 .recipe-of-day-container {
     display: flex;
@@ -175,6 +192,7 @@ footer {
     color: #DFE2DB;
     font-family: Idion;
     font-size: 1.2em;
+    height: 50px;
 }
 
 footer p {
@@ -295,6 +313,7 @@ footer p {
     width: 300px;
     height: 300px;
     border: solid;
+    box-shadow:  -10px -10px 10px rgba(60,60,60, 1);
 }
 
 .recipe-of-day-figure img {
@@ -316,10 +335,6 @@ footer p {
     height: 300px;
     width: 300px;
     position: relative;
-}
-
-.recipe-of-day-figure img {
-    box-shadow:  -10px -10px 10px rgba(60,60,60, 1);
 }
 
 .instructions {
@@ -463,6 +478,7 @@ footer p {
         order: -2;
         position: absolute;
         top: 50px;
+        align-items: center;
     }
 
     #scroll-button-wrapper {
@@ -470,8 +486,10 @@ footer p {
     }
 
     #author-wrapper {
-        text-align: center;
+        text-align: left;
+        padding-right: 20px;
     }
+
 }
 
 
@@ -481,47 +499,21 @@ footer p {
 
 @media screen and (min-width: 1050px) {
 
-    .recipe-of-day {
-        margin-left: 0;
-        margin-right: 0;
-    }
 
-    .recipe-name-container h1 {
-        margin-left: 0;
-        margin-right: 0;
-        width: 100%;
-    }
 
-    .recipe-name-container {
+    /*.recipe-name-container {
         font-size: 3em;
-    }
+    }*/
 
-    .instructions {
-        flex: 0;
-        position: absolute;
-        right: 0;
-        margin-top: 0;
-        border-left: solid;
-    }
 
-    #ingredients {
-        position: absolute;
-    }
 
-    #overlay {
+
+
+    /*#overlay {
         z-index: 9;
-    }
+    }*/
 
-    #scroll-button-and-author-wrapper {
-        flex-direction: row;
-        justify-content: space-between;
-        position: relative;
-        margin-top: auto;
-        width: 100% !important;
-        left: 0 !important;
-        top: 0;
-        order: 1;
-    }
+
 }
 
 
@@ -531,7 +523,7 @@ footer p {
     FOR FULL-SCREEN SIZE
 *****************************************/
 
-@media screen and (min-width: 1250px) {
+@media screen and (min-width: 1700px) {
     
     .header-image-left,
     .header-image-right {
@@ -547,12 +539,33 @@ footer p {
         margin-left: 15%;
     }
 
-    .ingredients {
+    #ingredients {
         width: 450px;
+        position: relative;
     }
 
-    .instructions {
+    #recipe-of-day-container {
+        justify-content: space-between;
+    }
+
+    .recipe-of-day {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .recipe-name-container h1 {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    #instructions {
         width: 450px;
+        position: relative;
+        right: 0;
+        margin-top: 0;
+        border-left: solid;
+        flex-basis: initial;
     }
 
     .recipe-of-day-figure img:hover {
@@ -561,6 +574,17 @@ footer p {
 
     #overlay {
         z-index: 10;
+    }
+
+    #scroll-button-and-author-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        align-self: center !important;
+        position: absolute !important;
+        left: auto !important;
+        margin-top: 500px;
+        width: 45% !important;
+        top: 0;
     }
 }
 

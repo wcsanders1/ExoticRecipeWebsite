@@ -28,10 +28,10 @@ function PositionScrollButtonAndAuthorWrapper() {
         $scrollButtonAndAuthorWrapper.outerWidth(thisWidth);
     }
 
-    // for full and semi-full screen size
+    // for full screen size
     if ($("#overlay").css("z-index") >= 9) {
         console.log("resizing");
-        $recipeOfDayContainer.after($scrollButtonAndAuthorWrapper);
+        $("#container-body-content").after($scrollButtonAndAuthorWrapper);
     }
 }
 
@@ -110,6 +110,9 @@ $(".recipe-of-day-figure img").hover(function () {
 
 
 //*********************   MAKING THE 'SUBMIT' BUTTON WORK FOR THE INGRDIENTS  *****************************
+
+
+// REDO THIS TO MAKE THE PLURAL MEASUREMENTS SHOW UP
 
 var numericalAmounts = document.getElementsByClassName("numerical-amounts");
 var newIngredientAmount = 0;
@@ -194,6 +197,7 @@ function SetRecipe(recipe) {
     var $recipeCaption = $("#recipe-caption");
     var $ingredientsContainer = $("#ingredients-container");
     var $instructionsContainer = $("#instructions-container");
+    var $authorContainer = $("#author-name");
 
     var instruction = 1;
     var ingredientsInstruction = 1;
@@ -207,6 +211,7 @@ function SetRecipe(recipe) {
     var recipeCaption = recipesDB[recipe].recipeDescriptionDB;
     var recipeIngredients = JSON.parse(recipesDB[recipe].recipeIngredientsDB);
     var recipeInstructions = JSON.parse(recipesDB[recipe].recipeInstructionsDB);
+    var recipeAuthor = recipesDB[recipe].recipeAuthorDB;
 
     $recipeImage.attr("src", recipeImage);
     $recipeName.text(recipeName);
@@ -220,7 +225,13 @@ function SetRecipe(recipe) {
         ingredientsContent += ": </li></ul></div><div class='ingredient-amounts-list'><ul id='ingredient-amounts'><li class='numerical-amounts'>";
         ingredientsContent += recipeIngredients[i].Amount;
         ingredientsContent += " </li><li class='amount-labels'>";
-        ingredientsContent += recipeIngredients[i].Measurement;
+
+        if (parseInt(recipeIngredients[i].Amount) == 1) {
+            ingredientsContent += recipeIngredients[i].SingularMeasurement;
+        } else {
+            ingredientsContent += recipeIngredients[i].PluralMeasurement;
+        }
+        
         ingredientsContent += "</li></ul></div></div>";
     }
 
@@ -233,6 +244,8 @@ function SetRecipe(recipe) {
     }
 
     $instructionsContainer.html(instructionsContent);
+
+    $authorContainer.text(recipeAuthor);
 }
 
 
@@ -261,15 +274,15 @@ $("#scroll-button-forward").click(function () {
     SetRecipe(recipeNum);
 });
 
-$("#pause-scroll").click(function () {
-    $("#play-scroll").removeClass("scroll-button-highlight");
-    $(this).addClass("scroll-button-highlight");
+$("#pause-scroll").mousedown(function () {
+    $("#play-scroll").removeClass("activeCustom");
+    $(this).addClass("activeCustom");
     loop = false;
 });
 
-$("#play-scroll").click(function () {
-    $("#pause-scroll").removeClass("scroll-button-highlight");
-    $(this).addClass("scroll-button-highlight");
+$("#play-scroll").mousedown(function () {
+    $("#pause-scroll").removeClass("activeCustom");
+    $(this).addClass("activeCustom");
     loop = true;
 });
 
