@@ -15,27 +15,32 @@ var recipeNum = 0;
 
 function PositionScrollButtonAndAuthorWrapper() {
     $scrollButtonAndAuthorWrapper = $("#scroll-button-and-author-wrapper");
-    $recipeImage = $("#recipe-image");
-    $recipeImagePosition = $recipeImage.offset();
-    $recipeOfDay = $("#recipe-of-day");
+
+    $scrollButtonWrapper = $("#scroll-button-wrapper");
+    $authorWrapper = $("#author-wrapper");
+    $recipeNameContainerWrapper = $("#recipe-name-container-wrapper");
 
     //for semi-semi-full screen size
+    if ($("#overlay").css("z-index") < 8) {
+        $scrollButtonAndAuthorWrapper.append($scrollButtonWrapper);
+        $scrollButtonAndAuthorWrapper.append($authorWrapper);
+        $("#container-body-content").prepend($scrollButtonAndAuthorWrapper);
+        $scrollButtonAndAuthorWrapper.show();
+    }
+
     if ($("#overlay").css("z-index") == 8) {
-        var ingredientsWidth = $ingredients.outerWidth();
-        var rightPosition = $recipeImagePosition.left;
-        var thisWidth = rightPosition - ingredientsWidth;
 
-        $recipeOfDayContainer.after($scrollButtonAndAuthorWrapper);
-        
-
-        //$recipeOfDayContainer.append($scrollButtonAndAuthorWrapper);
-        //$scrollButtonAndAuthorWrapper.offset({ left: ingredientsWidth });
-        //$scrollButtonAndAuthorWrapper.outerWidth(thisWidth);
+        $recipeNameContainerWrapper.prepend($scrollButtonWrapper);
+        $recipeNameContainerWrapper.append($authorWrapper);
+        $scrollButtonAndAuthorWrapper.hide();
     }
 
     // for full screen size
     if ($("#overlay").css("z-index") >= 9) {
+        $scrollButtonAndAuthorWrapper.append($scrollButtonWrapper);
+        $scrollButtonAndAuthorWrapper.append($authorWrapper);
         $("#container-body-content").after($scrollButtonAndAuthorWrapper);
+        $scrollButtonAndAuthorWrapper.show();
     }
 }
 
@@ -114,9 +119,6 @@ $(".recipe-of-day-figure img").hover(function () {
 
 
 //*********************   MAKING THE 'SUBMIT' BUTTON WORK FOR THE INGRDIENTS  *****************************
-
-
-// REDO THIS TO MAKE THE PLURAL MEASUREMENTS SHOW UP
 
 var numericalAmounts = document.getElementsByClassName("numerical-amounts");
 var amountLabels = document.getElementsByClassName("amount-labels");
@@ -241,7 +243,7 @@ function SetRecipe(recipe) {
             ingredientsContent += recipeIngredients[i].PluralMeasurement;
         }
         
-        ingredientsContent += "</li></ul></div></div>";
+        ingredientsContent += "</li></ul></div></div><ul><li class='ingredient-borders'></li></ul>";
     }
 
     $ingredientsContainer.html(ingredientsContent);

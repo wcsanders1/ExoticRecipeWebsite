@@ -2,22 +2,44 @@
     ViewBag.Title = "Home";
 }
 
-<div class="recipe-name-container">
-    <h1 class="title" id="recipe-name"></h1>
+<div id="scroll-button-and-author-wrapper">
+    <div id="scroll-button-wrapper">
+        <script type="text/javascript">
+                var searchUrl = "@Url.Action("GetAllTables", "Data")";
+        </script>
+        <button class="fa fa-step-backward scroll-buttons" type="submit" value="scroll" id="scroll-button-back"></button>
+        <button class="fa fa-step-forward scroll-buttons" type="submit" value="scroll" id="scroll-button-forward"></button>
+        <button class="fa fa-pause scroll-buttons" id="pause-scroll"></button>
+        <button class="fa fa-play scroll-buttons activeCustom" id="play-scroll"></button>
+    </div>
+    <div id="author-wrapper">
+        <p class="author">Recipe submitted by:</p>
+        <p id="author-name" class="author">@*FILLED IN BY JS*@</p>
+    </div>
+</div>
+
+
+<div id="recipe-name-container-wrapper">
+    <div id="recipe-name-container" class="recipe-name-container">
+        <h1 class="title" id="recipe-name"></h1>
+    </div>
 </div>
 
 <div id="recipe-of-day-container" class="recipe-of-day-container">
 
     <div id="ingredients" class="ingredients">
         <h1 class="ingredients-headline">Ingredients:</h1>
-        <form class="serving-size-input" type="text" action="index.html" method="post">
-            <label for="serving-size">Serving Size:</label>
-            <input type="number" id="serving-size" name="serving_size" value="4" min="1" max="20" maxlength="2" />
-        </form>
+        <div id="serving-size-form-button-wrapper">
+            <form id="serving-size-input" "serving-size-input" type="text" action="index.html" method="post">
+                <label for="serving-size">Serving Size:</label>
+                <input type="number" id="serving-size" name="serving_size" value="4" min="1" max="20" maxlength="2" />
+            </form>
+            <button id="ingredient-button" type="submit">Calculate Amounts</button>
+        </div>
         <div id="ingredients-container">
             @*FILLED IN BY SITE.JS*@
         </div>
-        <button id="ingredient-button" type="submit">Serving Size</button>
+        
     </div>
 
     <div id="recipe-of-day" class="recipe-of-day">
@@ -25,22 +47,6 @@
             <img id="recipe-image" width="300" height="300" />
             <figcaption id="recipe-caption"></figcaption>
         </figure>
-    </div>
-
-    <div id="scroll-button-and-author-wrapper">
-        <div id="scroll-button-wrapper">
-            <script type="text/javascript">
-                var searchUrl = "@Url.Action("GetAllTables", "Data")";
-            </script>
-            <button class="fa fa-step-backward scroll-buttons" type="submit" value="scroll" id="scroll-button-back"></button>
-            <button class="fa fa-step-forward scroll-buttons" type="submit" value="scroll" id="scroll-button-forward"></button>
-            <button class="fa fa-pause scroll-buttons" id="pause-scroll"></button>
-            <button class="fa fa-play scroll-buttons activeCustom" id="play-scroll"></button>
-        </div>
-        <div id="author-wrapper">
-            <p class="author">Recipe submitted by:</p>
-            <p id="author-name" class="author">@*FILLED IN BY JS*@</p>
-        </div>
     </div>
 
     <div id="instructions" class="instructions">
