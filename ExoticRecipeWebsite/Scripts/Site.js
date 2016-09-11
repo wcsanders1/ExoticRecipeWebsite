@@ -7,6 +7,9 @@ var priorServingSize = initialServingSize;             //parseFloat(document.get
 $ingredients = $("#ingredients");
 $recipeOfDayContainer = $("#recipe-of-day-container");
 
+var recipesDB;
+var recipeNum = 0;
+
 
 /*****************   SCROLL-BUTTON-WRAPPER POSITIONING   *******************/
 
@@ -14,6 +17,7 @@ function PositionScrollButtonAndAuthorWrapper() {
     $scrollButtonAndAuthorWrapper = $("#scroll-button-and-author-wrapper");
     $recipeImage = $("#recipe-image");
     $recipeImagePosition = $recipeImage.offset();
+    $recipeOfDay = $("#recipe-of-day");
 
     //for semi-semi-full screen size
     if ($("#overlay").css("z-index") == 8) {
@@ -21,16 +25,16 @@ function PositionScrollButtonAndAuthorWrapper() {
         var rightPosition = $recipeImagePosition.left;
         var thisWidth = rightPosition - ingredientsWidth;
 
-        console.log(thisWidth);
+        $recipeOfDayContainer.after($scrollButtonAndAuthorWrapper);
+        
 
-        $recipeOfDayContainer.append($scrollButtonAndAuthorWrapper);
-        $scrollButtonAndAuthorWrapper.offset({ left: ingredientsWidth });
-        $scrollButtonAndAuthorWrapper.outerWidth(thisWidth);
+        //$recipeOfDayContainer.append($scrollButtonAndAuthorWrapper);
+        //$scrollButtonAndAuthorWrapper.offset({ left: ingredientsWidth });
+        //$scrollButtonAndAuthorWrapper.outerWidth(thisWidth);
     }
 
     // for full screen size
     if ($("#overlay").css("z-index") >= 9) {
-        console.log("resizing");
         $("#container-body-content").after($scrollButtonAndAuthorWrapper);
     }
 }
@@ -69,7 +73,7 @@ $(".container-body-content").prepend($overlay);
 $overlay.hide();
 
 $(".recipe-of-day-figure img").click(function () {
-    if ($("#overlay").css("z-index") == 10) {
+    if ($("#overlay").css("z-index") >= 8) {
         loop = false;
         var imageLocation = $(this).attr("src");
         $dish_image.attr("src", imageLocation);
@@ -94,7 +98,7 @@ $(window).resize(function () {
 var $tip = $("<p class='tooltip'>Click for larger view!</p>");
 
 $(".recipe-of-day-figure img").hover(function () {
-    if ($("#overlay").css("z-index") == 10) {
+    if ($("#overlay").css("z-index") >= 8) {
         $(".recipe-of-day-figure").append($tip);
         $tip.fadeIn("slow");
     }
@@ -115,6 +119,7 @@ $(".recipe-of-day-figure img").hover(function () {
 // REDO THIS TO MAKE THE PLURAL MEASUREMENTS SHOW UP
 
 var numericalAmounts = document.getElementsByClassName("numerical-amounts");
+var amountLabels = document.getElementsByClassName("amount-labels");
 var newIngredientAmount = 0;
 var newServingSize = 0;
 var priorIngredientAmount = 0;
@@ -122,6 +127,7 @@ var newIngredientAmount = 0;
 
 $("#ingredient-button").click(function () {
     newServingSize = parseFloat(document.getElementById("serving-size").value);
+    var recipeIngredientsCalculate = JSON.parse(recipesDB[recipeNum].recipeIngredientsDB);
 
     for (var i = 0; i < numericalAmounts.length; i++) {
         priorIngredientAmount = parseFloat(numericalAmounts[i].innerText);
@@ -130,6 +136,12 @@ $("#ingredient-button").click(function () {
             newIngredientAmount = (priorIngredientAmount / priorServingSize) * newServingSize;
             newIngredientAmount = Math.round(newIngredientAmount * 100) / 100;
             numericalAmounts[i].innerText = newIngredientAmount;
+
+            if (newIngredientAmount == 1) {
+                amountLabels[i].innerText = recipeIngredientsCalculate[i].SingularMeasurement;
+            } else {
+                amountLabels[i].innerText = recipeIngredientsCalculate[i].PluralMeasurement;
+            }
         }
     }
 
@@ -137,9 +149,6 @@ $("#ingredient-button").click(function () {
 });
 
 /***********************   LOADING RECIPES  **********************************/
-
-var recipesDB;
-var recipeNum = 0;
 
 function CallDatabase() {
     $.ajax({
@@ -186,7 +195,7 @@ function resetTimer() {
     timer = setInterval(function () { loopRecipes(loop); }, 7000);
 }
 
-var $recipeElements = $("#recipe-image,#recipe-name,#recipe-caption,#ingredients-container,#instructions-container");
+var $recipeElements = $("#recipe-image,#recipe-name,#recipe-caption,#ingredients-container,#instructions-container,#author-name");
 
 function SetRecipe(recipe) {
     $("#serving-size").val(initialServingSize);

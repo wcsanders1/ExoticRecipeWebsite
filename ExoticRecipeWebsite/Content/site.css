@@ -418,7 +418,7 @@ footer p {
 /***************************************************************************************
     FOR SEMI-SEMI-FULL-SCREEN SIZE
 ****************************************************************************************/
-@media screen and (min-width: 900px) {
+@media screen and (min-width: 1200px) {
     
     .header-menu li {
         display: inline-block;
@@ -436,36 +436,37 @@ footer p {
      .recipe-of-day-container {
         align-items: center;
         flex-direction: row;
+        justify-content: space-around;
         position: relative;
         flex-wrap: wrap;
     }
     
     .recipe-of-day {
-        margin-left: auto;
-        margin-right: 5%;
+        /*margin-left: auto;
+        margin-right: 5%;*/
         align-self: flex-start;
     }
 
     .ingredients {
         left: 0;
+        margin-left: 5%;
         align-self: flex-start;
         order: -1;
-        border-left: 0;
         margin-top: 0;
     }
     
     .recipe-name-container h1 {
-        margin-left: auto;
+        /*margin-left: auto;
         margin-right: 5%;
-        width: 300px;
+        width: 300px;*/
         text-align: center;
     }
 
     .instructions {
-        flex: 0 1 100%;
+        /*flex: 0 1 100%;*/
         align-self: flex-start;
-        border-left: 0;
-        border-right: 0;
+        margin-right: 5%;
+        margin-top: 0;
     }
 
     #overlay {
@@ -475,8 +476,8 @@ footer p {
     #scroll-button-and-author-wrapper {
         display: flex;
         flex-direction: column;
-        order: -2;
-        position: absolute;
+        /*order: -2;
+        position: absolute;*/
         top: 50px;
         align-items: center;
     }
@@ -542,6 +543,8 @@ footer p {
     #ingredients {
         width: 450px;
         position: relative;
+        margin-left: 0;
+        border-left: 0;
     }
 
     #recipe-of-day-container {
@@ -563,8 +566,9 @@ footer p {
         width: 450px;
         position: relative;
         right: 0;
-        margin-top: 0;
+        margin: 0;
         border-left: solid;
+        border-right: 0;
         flex-basis: initial;
     }
 
@@ -585,6 +589,7 @@ footer p {
         margin-top: 500px;
         width: 45% !important;
         top: 0;
+        z-index: -1;
     }
 }
 
