@@ -58,6 +58,8 @@ $(document).ready(function () {
 
 /*******************   INSTRUCTIONS POSITIONING   ***************************/
 
+/*      NOT USED??    */
+
 function PositionInstructions() {
     $instructions = $("#instructions");
 
