@@ -1,18 +1,5 @@
 ﻿/*****************  AJAX TO DATABASE ON SEARCH PAGE   ************************/
 
-var recipesDB;
-
-function CallDatabase() {
-    $.ajax({
-        type: "GET",
-        url: searchUrl,
-        data: "{}",
-        dataType: "json",
-        success: OnSuccess,
-        error: OnError
-    });
-}
-
 $("#btn-load-data").click(function () {
     CallDatabase();
 });
@@ -25,26 +12,29 @@ function OnSuccess(data) {
     var content = "";
     var $homeSelector = $("<li class='navigation-selector'><a href='#'>Home</a></li>");
     var $images = [];
+    var $names = [];
     var imageText;
 
     recipesDB = data.sort(function (a, b) { return a.recipeNameDB.localeCompare(b.recipeNameDB); });
 
-    for (var i = 0; i < recipesDB.length; i++) {
-        content += "<p class='recipes-in-panel' id=" + i + ">" + recipesDB[i].recipeNameDB + "</p>";
-    }
-    $("#recipe-panel").html("");
-    $("#recipe-panel").html(content);
+    //for (var i = 0; i < recipesDB.length; i++) {
+    //    content += "<p class='recipes-in-panel' id=" + i + ">" + recipesDB[i].recipeNameDB + "</p>";
+    //}
+    //$("#recipe-panel").html("");
+    //$("#recipe-panel").html(content);
 
-    var recipesInPanel = document.getElementsByClassName("recipes-in-panel");
+    //var recipesInPanel = document.getElementsByClassName("recipes-in-panel");
 
-    for (var i = 0; i < recipesInPanel.length; i++) {
-        recipesInPanel[i].onclick = recipesClick;
-    }
+    //for (var i = 0; i < recipesInPanel.length; i++) {
+    //    recipesInPanel[i].onclick = recipesClick;
+    //}
 
     $("#search-wrapper").empty();
 
     for (var i = 0; i < recipesDB.length; i++) {
         imageText = recipesDB[i].recipeImageDB;
+        $names[i] = $("<p class='recipes-in-panel' id='recipe-" + i + "'>" + recipesDB[i].recipeNameDB + "</p>");
+        $("#search-wrapper").append($names[i]);
         $images[i] = $("<div class='search-image'></div>");
         $images[i].css("background", "url(" + imageText + ") center no-repeat");
         $images[i].css("background-size", "cover");

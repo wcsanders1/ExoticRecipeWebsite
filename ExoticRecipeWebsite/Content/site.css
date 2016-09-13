@@ -57,7 +57,7 @@ a {
 }
 
 a:hover {
-    color: crimson;
+    opacity: .5;
 }
 
 ul {
@@ -160,6 +160,10 @@ ul {
     margin: 10px 0;
     font-family: "Idion", sans-serif;
     font-size: 2em;
+}
+
+.active-nav-list-item {
+    color: crimson;
 }
 
 .header-image-left,
@@ -401,15 +405,16 @@ footer p {
 }
 
 #search-wrapper {
-    max-height: 300px;
+    margin-top: 30px;
     overflow-y: scroll;
-    width: 120px;
+    width: 250px;
+    height: 500px;
 }
 
 .search-image {
-    height: 100px;
-    width: 100px;
-    margin: 5px 0;
+    height: 200px;
+    width: 200px;
+    margin-bottom: 15px;
 }
 
 /*********************************
@@ -535,6 +540,10 @@ footer p {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+    }
+
+    #search-wrapper {
+        height: 700px;
     }
 
 }
