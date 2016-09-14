@@ -396,26 +396,10 @@ footer p {
 
 
 /*********************************
-    SEARCH PAGE
+    SEARCH PAGE  [in own file]
 **********************************/
 
-#image-text {
-    height: 200px;
-    width: 200px;
-}
 
-#search-wrapper {
-    margin-top: 30px;
-    overflow-y: scroll;
-    width: 250px;
-    height: 500px;
-}
-
-.search-image {
-    height: 200px;
-    width: 200px;
-    margin-bottom: 15px;
-}
 
 /*********************************
     CONTACT PAGE
@@ -541,11 +525,6 @@ footer p {
         flex-direction: row;
         justify-content: space-around;
     }
-
-    #search-wrapper {
-        height: 700px;
-    }
-
 }
 
 

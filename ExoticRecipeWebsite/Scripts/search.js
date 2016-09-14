@@ -13,32 +13,23 @@ function OnSuccess(data) {
     var $homeSelector = $("<li class='navigation-selector'><a href='#'>Home</a></li>");
     var $images = [];
     var $names = [];
+    var recipeName;
     var imageText;
 
     recipesDB = data.sort(function (a, b) { return a.recipeNameDB.localeCompare(b.recipeNameDB); });
 
-    //for (var i = 0; i < recipesDB.length; i++) {
-    //    content += "<p class='recipes-in-panel' id=" + i + ">" + recipesDB[i].recipeNameDB + "</p>";
-    //}
-    //$("#recipe-panel").html("");
-    //$("#recipe-panel").html(content);
-
-    //var recipesInPanel = document.getElementsByClassName("recipes-in-panel");
-
-    //for (var i = 0; i < recipesInPanel.length; i++) {
-    //    recipesInPanel[i].onclick = recipesClick;
-    //}
-
     $("#search-wrapper").empty();
 
     for (var i = 0; i < recipesDB.length; i++) {
+        recipeName = recipesDB[i].recipeNameDB;
         imageText = recipesDB[i].recipeImageDB;
-        $names[i] = $("<p class='recipes-in-panel' id='recipe-" + i + "'>" + recipesDB[i].recipeNameDB + "</p>");
-        $("#search-wrapper").append($names[i]);
-        $images[i] = $("<div class='search-image'></div>");
+
+        $names[i] = $("<div id='name-and-image-" + i + "' class='name-and-image'><p class='recipes-in-panel'>" + recipeName + "</p>");
+        $images[i] = $("<div class='search-image'></div></div>");               
         $images[i].css("background", "url(" + imageText + ") center no-repeat");
         $images[i].css("background-size", "cover");
-        $("#search-wrapper").append($images[i]);
+        $names[i].append($images[i]);
+        $("#search-wrapper").append($names[i]);
     }
 }
 
@@ -100,3 +91,26 @@ function recipesClick() {
     $("#ingredient-list-search").html("");
     $("#ingredient-list-search").html(contentIngredients);
 }
+
+/************************   POSITION SEARCH WRAPPER ON FULL-SIZE PAGE   *********************************************/
+
+//function PositionSearchWrapper() {
+
+//    if ($("#search-page-measurement").css("z-index") == 3) {
+//        $containerBodyContent = $("#container-body-content");
+//        $searchWrapper = $("#search-wrapper");
+        
+//        $searchWrapper.height(0);
+//        var searchWrapperHeight = $containerBodyContent.height() * .9;
+//        console.log("height is:" + searchWrapperHeight);
+//        $searchWrapper.height(searchWrapperHeight);
+//    }
+//}
+
+$(window).resize(function () {
+    //PositionSearchWrapper();
+});
+
+$(document).ready(function () {
+    //PositionSearchWrapper();
+})
