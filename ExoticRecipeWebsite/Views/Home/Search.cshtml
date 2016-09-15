@@ -10,6 +10,27 @@
 
 <div id="search-wrapper"></div>
 
+<form id="search-recipes-by-name" action="">
+    <label for="get-recipe-name">Recipe Name:</label>
+    <input id="get-recipe-name" type="text" />
+</form>
+
+<div id="print-wrapper">
+    <div id="ingredients" class="ingredients">
+        <h1 class="ingredients-headline">Ingredients:</h1>
+        <div id="serving-size-form-button-wrapper">
+            <form id="serving-size-input" type="text" action="index.html" method="post">
+                <label for="serving-size">Serving Size:</label>
+                <input type="number" id="serving-size" name="serving_size" value="4" min="1" max="20" maxlength="2" />
+            </form>
+            <button id="ingredient-button" type="submit">Calculate Amounts</button>
+        </div>
+        <div id="ingredients-container">
+            @*FILLED IN BY SITE.JS*@
+        </div>
+    </div>
+</div>
+
 
     @*<h3>Load database data using JQuery</h3>
     <button id="btn-load-data" type="submit">Load Data</button>

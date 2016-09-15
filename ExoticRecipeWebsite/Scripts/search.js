@@ -1,8 +1,5 @@
 ﻿/*****************  AJAX TO DATABASE ON SEARCH PAGE   ************************/
 
-$("#btn-load-data").click(function () {
-    CallDatabase();
-});
 
 $(document).ready(function () {
     CallDatabase();
@@ -24,11 +21,12 @@ function OnSuccess(data) {
         recipeName = recipesDB[i].recipeNameDB;
         imageText = recipesDB[i].recipeImageDB;
 
-        $names[i] = $("<div id='name-and-image-" + i + "' class='name-and-image'><p class='recipes-in-panel'>" + recipeName + "</p>");
+        $names[i] = $("<div id='" + i + "' class='name-and-image'><p class='recipes-in-panel'>" + recipeName + "</p>");
         $images[i] = $("<div class='search-image'></div></div>");               
         $images[i].css("background", "url(" + imageText + ") center no-repeat");
         $images[i].css("background-size", "cover");
         $names[i].append($images[i]);
+        $names[i].click(RecipesClick);
         $("#search-wrapper").append($names[i]);
     }
 }
@@ -37,60 +35,70 @@ function OnError(data) {
 
 }
 
-function recipesClick() {
+function RecipesClick() {
+
     var index = parseInt(this.id);
-    var instructionIndex;
-    var ingredientsInstructionIndex;
-    var contentDescription = "";
-    var contentInstructions = "";
-    var contentIngredients = "";
-    var instruction = 1;
-    var ingredientsInstruction = 1;
+    $ingredientsContainer = $("#ingredients-container");
+    var ingredientsContent = IngredientsContent(index);
 
-    contentDescription = "<p>" + recipesDB[index].recipeDescriptionDB + "</p>";
-    $("#recipe-description").html("");
-    $("#recipe-description").html(contentDescription);
-
-
-    var parseContent = JSON.parse(recipesDB[index].recipeInstructionsDB);
-
-    for (i in parseContent)
-    {      
-        instructionIndex = instruction.toString();
-        contentInstructions += "<p>" + i + ". " + parseContent[instructionIndex] + "</p>";
-        instruction++;
-    }
-
-    $("#recipe-instructions").html("");
-    $("#recipe-instructions").html(contentInstructions);
-
-    var imageText = recipesDB[index].recipeImageDB;
-
-    if (imageText != null) {
-        $("#image-text").css("background", "url(" + imageText + ") center no-repeat");
-        $("#image-text").css("background-size", "cover");
-        $("#image-text").show();
-    } else {
-        $("#image-text").hide();
-    }
-
-    var parseIngredients = JSON.parse(recipesDB[index].recipeIngredientsDB);
-    var parseEachIngredient;
-
-    for (i in parseIngredients)
-    {
-        ingredientsInstructionIndex = ingredientsInstruction.toString();
-        contentIngredients += "<p>" + ingredientsInstruction + ". " +
-            parseIngredients[i].Ingredient + ": " +
-            parseIngredients[i].Amount + " " +
-            parseIngredients[i].Measurement + "</p>";
-
-        ingredientsInstruction++;
-    }
-
-    $("#ingredient-list-search").html("");
-    $("#ingredient-list-search").html(contentIngredients);
+    $ingredientsContainer.html(ingredientsContent);
 }
+
+
+//function recipesClick() {
+//    var index = parseInt(this.id);
+//    var instructionIndex;
+//    var ingredientsInstructionIndex;
+//    var contentDescription = "";
+//    var contentInstructions = "";
+//    var contentIngredients = "";
+//    var instruction = 1;
+//    var ingredientsInstruction = 1;
+
+//    contentDescription = "<p>" + recipesDB[index].recipeDescriptionDB + "</p>";
+//    $("#recipe-description").html("");
+//    $("#recipe-description").html(contentDescription);
+
+
+//    var parseContent = JSON.parse(recipesDB[index].recipeInstructionsDB);
+
+//    for (i in parseContent)
+//    {      
+//        instructionIndex = instruction.toString();
+//        contentInstructions += "<p>" + i + ". " + parseContent[instructionIndex] + "</p>";
+//        instruction++;
+//    }
+
+//    $("#recipe-instructions").html("");
+//    $("#recipe-instructions").html(contentInstructions);
+
+//    var imageText = recipesDB[index].recipeImageDB;
+
+//    if (imageText != null) {
+//        $("#image-text").css("background", "url(" + imageText + ") center no-repeat");
+//        $("#image-text").css("background-size", "cover");
+//        $("#image-text").show();
+//    } else {
+//        $("#image-text").hide();
+//    }
+
+//    var parseIngredients = JSON.parse(recipesDB[index].recipeIngredientsDB);
+//    var parseEachIngredient;
+
+//    for (i in parseIngredients)
+//    {
+//        ingredientsInstructionIndex = ingredientsInstruction.toString();
+//        contentIngredients += "<p>" + ingredientsInstruction + ". " +
+//            parseIngredients[i].Ingredient + ": " +
+//            parseIngredients[i].Amount + " " +
+//            parseIngredients[i].Measurement + "</p>";
+
+//        ingredientsInstruction++;
+//    }
+
+//    $("#ingredient-list-search").html("");
+//    $("#ingredient-list-search").html(contentIngredients);
+//}
 
 /************************   POSITION SEARCH WRAPPER ON FULL-SIZE PAGE   *********************************************/
 

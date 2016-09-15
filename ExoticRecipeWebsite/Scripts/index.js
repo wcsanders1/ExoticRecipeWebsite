@@ -152,19 +152,7 @@ $("#ingredient-button").click(function () {
     priorServingSize = newServingSize;
 });
 
-/***********************   LOADING RECIPES  **********************************/
 
-//function CallDatabase() {
-//    $.ajax({
-//        async: false,
-//        type: "GET",
-//        url: searchUrl,
-//        data: "{}",
-//        dataType: "json",
-//        success: OnSuccess,
-//        error: OnError
-//    });
-//}
 
 function OnSuccess(data) {
     recipesDB = data.sort(function (a, b) { return a.recipeNameDB.localeCompare(b.recipeNameDB); });
@@ -199,67 +187,6 @@ function resetTimer() {
     timer = setInterval(function () { loopRecipes(loop); }, 7000);
 }
 
-var $recipeElements = $("#recipe-image,#recipe-name,#recipe-caption,#ingredients-container,#instructions-container,#author-name");
-
-function SetRecipe(recipe) {
-    $("#serving-size").val(initialServingSize);
-    priorServingSize = initialServingSize;
-
-    var $recipeImage = $("#recipe-image");
-    var $recipeName = $("#recipe-name");
-    var $recipeCaption = $("#recipe-caption");
-    var $ingredientsContainer = $("#ingredients-container");
-    var $instructionsContainer = $("#instructions-container");
-    var $authorContainer = $("#author-name");
-
-    var instruction = 1;
-    var ingredientsInstruction = 1;
-    var ingredientsInstructionIndex;
-    var instructionIndex;
-    var ingredientsContent = "";
-    var instructionsContent = "";
-
-    var recipeImage = recipesDB[recipe].recipeImageDB;
-    var recipeName = recipesDB[recipe].recipeNameDB;
-    var recipeCaption = recipesDB[recipe].recipeDescriptionDB;
-    var recipeIngredients = JSON.parse(recipesDB[recipe].recipeIngredientsDB);
-    var recipeInstructions = JSON.parse(recipesDB[recipe].recipeInstructionsDB);
-    var recipeAuthor = recipesDB[recipe].recipeAuthorDB;
-
-    $recipeImage.attr("src", recipeImage);
-    $recipeName.text(recipeName);
-    $recipeCaption.text(recipeCaption);
-
-    $ingredientsContainer.empty();
-
-    for (i in recipeIngredients) {
-        ingredientsContent += "<div class='ingredient-lists-container'><div class='ingredient-names-list'><ul><li>";
-        ingredientsContent += recipeIngredients[i].Ingredient;
-        ingredientsContent += ": </li></ul></div><div class='ingredient-amounts-list'><ul id='ingredient-amounts'><li class='numerical-amounts'>";
-        ingredientsContent += recipeIngredients[i].Amount;
-        ingredientsContent += " </li><li class='amount-labels'>";
-
-        if (parseInt(recipeIngredients[i].Amount) == 1) {
-            ingredientsContent += recipeIngredients[i].SingularMeasurement;
-        } else {
-            ingredientsContent += recipeIngredients[i].PluralMeasurement;
-        }
-
-        ingredientsContent += "</li></ul></div></div><ul><li class='ingredient-borders'></li></ul>";
-    }
-
-    $ingredientsContainer.html(ingredientsContent);
-
-    $instructionsContainer.empty();
-
-    for (i in recipeInstructions) {
-        instructionsContent += "<li>" + recipeInstructions[i] + "</li>";
-    }
-
-    $instructionsContainer.html(instructionsContent);
-
-    $authorContainer.text(recipeAuthor);
-}
 
 
 
@@ -304,6 +231,8 @@ $("#play-scroll").mousedown(function () {
 /****************************   ITERATE RECIPES ON TIMER   ******************************/
 
 function loopRecipes(loop) {
+
+    var $recipeElements = $("#recipe-image,#recipe-name,#recipe-caption,#ingredients-container,#instructions-container,#author-name");
 
     var $ingredientButton = $("#ingredient-button");
 
