@@ -6,7 +6,7 @@
 
 <link href="~/Content/search.css" rel="stylesheet" type="text/css" />
 
-@*<div id="search-page-measurement"></div>*@
+<div id="search-page-measurement"></div>
 
 <div id="search-wrapper"></div>
 
@@ -16,23 +16,49 @@
 </form>
 
 <div id="print-wrapper">
-    <div id="ingredients" class="ingredients">
-        <h1 class="ingredients-headline">Ingredients:</h1>
-        <div id="serving-size-form-button-wrapper">
-            <form id="serving-size-input" type="text" action="index.html" method="post">
-                <label for="serving-size">Serving Size:</label>
-                <input type="number" id="serving-size" name="serving_size" value="4" min="1" max="20" maxlength="2" />
-            </form>
-            <button id="ingredient-button" type="submit">Calculate Amounts</button>
+
+    <div id="recipe-name-container-wrapper">
+        <div id="recipe-name-container" class="recipe-name-container">
+            <h1 class="title" id="recipe-name"></h1>
         </div>
-        <div id="ingredients-container">
-            @*FILLED IN BY SITE.JS*@
+    </div>
+
+    <div id="caption-image-author-wrapper">
+        <div id="caption">
+            <p id="caption-p"></p>
+        </div>
+        <img id="image" height="200" width="200" />
+        <div id="author-wrapper-search">
+            <p class="author">Recipe submitted by:</p>
+            <p id="author-name" class="author">@*FILLED IN BY JS*@</p>
+        </div>
+    </div>
+
+    <div id="ingredients-instructions-wrapper">
+        <div id="ingredients" class="ingredients">
+            <h1 class="ingredients-headline">Ingredients:</h1>
+            <div id="serving-size-form-button-wrapper">
+                <form id="serving-size-input" type="text" action="index.html" method="post">
+                    <label for="serving-size">Serving Size:</label>
+                    <input type="number" id="serving-size" name="serving_size" value="4" min="1" max="20" maxlength="2" />
+                </form>
+                <button id="ingredient-button" type="submit">Calculate Amounts</button>
+            </div>
+            <div id="ingredients-container">
+                @*FILLED IN BY SITE.JS*@
+            </div>
+        </div>
+        <div id="instructions" class="instructions">
+            <h1 class="instructions-headline">Instructions:</h1>
+            <ol id="instructions-container">
+                @*FILLED IN BY SITE.JS*@
+            </ol>
         </div>
     </div>
 </div>
 
 
-    @*<h3>Load database data using JQuery</h3>
+@*<h3>Load database data using JQuery</h3>
     <button id="btn-load-data" type="submit">Load Data</button>
     <div id="recipe-panel"></div>
     <div id="recipe-description"></div>
@@ -44,4 +70,4 @@
     var searchUrl = "@Url.Action("GetAllTables", "Data")";
     var page = "search";
 </script>
-<script src="~/Scripts/search.js" ></script>
+<script src="~/Scripts/search.js"></script>

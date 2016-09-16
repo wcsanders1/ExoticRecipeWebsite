@@ -61,17 +61,15 @@ function SetRecipe(recipe) {
     $recipeName.text(recipeName);
     $recipeCaption.text(recipeCaption);
 
-    $ingredientsContainer.empty();
+    //$ingredientsContainer.empty();
 
     ingredientsContent = IngredientsContent(recipe);
 
     $ingredientsContainer.html(ingredientsContent);
 
-    $instructionsContainer.empty();
+    //$instructionsContainer.empty();
 
-    for (i in recipeInstructions) {
-        instructionsContent += "<li>" + recipeInstructions[i] + "</li>";
-    }
+    instructionsContent = InstructionsContent(recipe);
 
     $instructionsContainer.html(instructionsContent);
 
@@ -103,4 +101,15 @@ function IngredientsContent(recipe) {
     }
 
     return ingredientsContent;
+}
+
+function InstructionsContent(recipe) {
+    var recipeInstructions = JSON.parse(recipesDB[recipe].recipeInstructionsDB);
+    var instructionsContent = "";
+
+    for (i in recipeInstructions) {
+        instructionsContent += "<li>" + recipeInstructions[i] + "</li>";
+    }
+    
+    return instructionsContent;
 }
