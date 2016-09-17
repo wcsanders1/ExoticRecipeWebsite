@@ -5,33 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="exotic recipes" />
     <meta name="keywords" content="recipe, exotic, parody, comedy" />
-    <title>@ViewBag.Title - Exotic Recipes</title>    
+    <title>@ViewBag.Title - Exotic Recipes</title>
     @*<link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />*@
     <link href="~/Content/normalize.css" rel="stylesheet" type="text/css" />
-    <link href="~/Content/site.css" rel="stylesheet" type="text/css" />    
-    <link href="~/fonts/Font Awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
-    <script src="~/Scripts/modernizr-2.6.2.js"></script>
+    <link href="~/Content/site.css" rel="stylesheet" type="text/css" />
+    <link href="~/fonts/Font Awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 
-    <script src="~/Scripts/jquery-1.10.2.js"></script>
-    @*<script src="~/Scripts/jquery-1.10.2.min.js"></script>
-        <script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>*@
+    @*<script src="~/Scripts/modernizr-2.6.2.js"></script>*@
+    @*<script src="~/Scripts/jquery-1.10.2.js"></script>*@
 
-    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>
+
+    @*<script src="~/Scripts/bootstrap.min.js"></script>*@
 
 </head>
 <body>
-    <header class="main-header clearfix">
-        <div class="header-image-left"></div>
-        <div class="title-menu-wrapper">
-            <h1 class="header-title">Exotic Recipies</h1>
-            <ul class="header-menu">
-                <li><a id="index" class="nav-list-items" href="@Url.Action("Index")">Home</a></li>
-                <li><a id="search" class="nav-list-items" href="@Url.Action("Search")">Search</a></li>
-                <li><a id="contact" class="nav-list-items" href="@Url.Action("Contact")">Contact</a></li>
-            </ul>
-        </div>
-        <div class="header-image-right"></div>
-    </header>
+    <div id="body-wrapper">
+        <header class="main-header">
+            <div class="header-image-left"></div>
+            <div class="title-menu-wrapper">
+                <h1 class="header-title">Exotic Recipies</h1>
+                <ul class="header-menu">
+                    <li><a id="index" class="nav-list-items" href="@Url.Action("Index")">Home</a></li>
+                    <li><a id="search" class="nav-list-items" href="@Url.Action("Search")">Search</a></li>
+                    <li><a id="contact" class="nav-list-items" href="@Url.Action("Contact")">Contact</a></li>
+                </ul>
+            </div>
+            <div class="header-image-right"></div>
+        </header>
 
         <div id="container-body-content" class="container-body-content">
             @RenderBody()
@@ -39,6 +41,9 @@
         <footer>
             <p>&copy; @DateTime.Now.Year - Bill Sanders</p>
         </footer>
+    </div>
+
+
 
     <script src="~/Scripts/site.js"></script>
 

@@ -4,7 +4,8 @@
 
 @*<h2>Try http://selectpdf.com/community-edition/ to print to PDF</h2>*@
 
-<link href="~/Content/search.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/search.css" rel="stylesheet" type="text/css" media="screen,print" />
+@*<link href="~/Content/searchPrint.css" rel="stylesheet" type="text/css" media="print" />*@
 
 <div id="search-page-measurement"></div>
 
@@ -15,7 +16,7 @@
     <input id="get-recipe-name" type="text" />
 </form>
 
-<div id="print-wrapper">
+<div id="print-wrapper" class="printable">
 
     <div id="recipe-name-container-wrapper">
         <div id="recipe-name-container" class="recipe-name-container">
@@ -55,6 +56,7 @@
             </ol>
         </div>
     </div>
+    <button id="print-recipe-button">Print</button>
 </div>
 
 

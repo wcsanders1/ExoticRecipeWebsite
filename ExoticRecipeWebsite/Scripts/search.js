@@ -129,3 +129,10 @@ $("#get-recipe-name").keyup(function () {
         }
     }
 });
+
+
+/*****************   PRINT RECIPE   ******************************/
+
+$("#print-recipe-button").click(function () {
+    window.print();
+});

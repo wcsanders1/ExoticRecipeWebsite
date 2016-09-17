@@ -98,6 +98,20 @@
     border: 2px solid;
 }
 
+#print-recipe-button {
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    margin: 5px;
+    background-color: #1A5276;
+    box-shadow:  -10px -10px 10px rgba(60,60,60, 1);
+    color: aliceblue;
+}
+
+#print-recipe-button:active {
+    box-shadow:  -5px -5px 5px rgba(60,60,60, 1);
+    transform: translateY(-5px);
+}
 
 
 
@@ -179,7 +193,7 @@
     }
 
     #ingredients-instructions-wrapper {
-    flex-direction: row;
+        flex-direction: row;
     }
 
 }
@@ -216,5 +230,88 @@
 
     #instructions {
         width: 450px;
+    }
+}
+
+
+
+/*********************   PRINT   **************************/
+
+@media print {
+
+    
+    body {
+        visibility: hidden;
+    }
+
+    header {
+        height: 0;
+    }
+    
+    @page { size: auto; margin: 0mm; }
+
+    #caption-image-author-wrapper {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;    
+        visibility: visible;    
+    }
+    
+    #ingredients-instructions-wrapper {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        visibility: visible;
+    }
+
+    #print-wrapper {
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        border: none !important;
+        margin-top: 0;
+        background-color: none;
+    }
+
+    #recipe-name-container-wrapper {
+        visibility: visible;
+    }
+
+    #caption {
+        
+        font-size: 1em;
+        width: 200px;
+    }
+
+    #image {
+        
+        box-shadow: none;
+    }
+
+    #ingredients {
+        font-size: 1em;
+        width: 330px;
+    }
+
+    #serving-size-form-button-wrapper {
+        padding-bottom: 20px;
+    }
+
+    .ingredient-borders {
+        border-bottom: 1px solid;
+    }
+
+    #instructions {
+        font-size: 1em;
+        width: 330px;
+        border: 2px solid;
+    }
+
+    #print-recipe-button {
+        display: none;
+    }
+
+    #ingredient-button {
+        display: none;
     }
 }

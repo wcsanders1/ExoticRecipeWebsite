@@ -107,6 +107,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\normalize.css" />
     <Content Include="Content\search.css" />
+    <Content Include="Content\searchPrint.css" />
     <Content Include="Content\site.css" />
     <Content Include="App_Data\dbo.recipeTable.sql" />
     <Content Include="fonts\Font Awesome\css\font-awesome.css" />
