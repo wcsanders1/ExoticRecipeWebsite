@@ -2,13 +2,9 @@
 
 var loop = false;
 var timer;
-var initialServingSize = $("#serving-size").val();
-var priorServingSize = initialServingSize;             //parseFloat(document.getElementById("serving-size").value);
 $ingredients = $("#ingredients");
 $recipeOfDayContainer = $("#recipe-of-day-container");
 
-//var recipesDB;
-//var recipeNum = 0;
 
 
 /*****************   SCROLL-BUTTON-WRAPPER POSITIONING   *******************/
@@ -120,37 +116,37 @@ $(".recipe-of-day-figure img").hover(function () {
 
 
 
-//*********************   MAKING THE 'SUBMIT' BUTTON WORK FOR THE INGRDIENTS  *****************************
+////*********************   MAKING THE 'SUBMIT' BUTTON WORK FOR THE INGRDIENTS  *****************************
 
-var numericalAmounts = document.getElementsByClassName("numerical-amounts");
-var amountLabels = document.getElementsByClassName("amount-labels");
-var newIngredientAmount = 0;
-var newServingSize = 0;
-var priorIngredientAmount = 0;
-var newIngredientAmount = 0;
+//var numericalAmounts = document.getElementsByClassName("numerical-amounts");
+//var amountLabels = document.getElementsByClassName("amount-labels");
+//var newIngredientAmount = 0;
+//var newServingSize = 0;
+//var priorIngredientAmount = 0;
+//var newIngredientAmount = 0;
 
-$("#ingredient-button").click(function () {
-    newServingSize = parseFloat(document.getElementById("serving-size").value);
-    var recipeIngredientsCalculate = JSON.parse(recipesDB[recipeNum].recipeIngredientsDB);
+//$("#ingredient-button").click(function () {
+//    newServingSize = parseFloat(document.getElementById("serving-size").value);
+//    var recipeIngredientsCalculate = JSON.parse(recipesDB[recipeNum].recipeIngredientsDB);
 
-    for (var i = 0; i < numericalAmounts.length; i++) {
-        priorIngredientAmount = parseFloat(numericalAmounts[i].innerText);
+//    for (var i = 0; i < numericalAmounts.length; i++) {
+//        priorIngredientAmount = parseFloat(numericalAmounts[i].innerText);
 
-        if (priorIngredientAmount > 0) {
-            newIngredientAmount = (priorIngredientAmount / priorServingSize) * newServingSize;
-            newIngredientAmount = Math.round(newIngredientAmount * 100) / 100;
-            numericalAmounts[i].innerText = newIngredientAmount;
+//        if (priorIngredientAmount > 0) {
+//            newIngredientAmount = (priorIngredientAmount / priorServingSize) * newServingSize;
+//            newIngredientAmount = Math.round(newIngredientAmount * 100) / 100;
+//            numericalAmounts[i].innerText = newIngredientAmount;
 
-            if (newIngredientAmount == 1) {
-                amountLabels[i].innerText = recipeIngredientsCalculate[i].SingularMeasurement;
-            } else {
-                amountLabels[i].innerText = recipeIngredientsCalculate[i].PluralMeasurement;
-            }
-        }
-    }
+//            if (newIngredientAmount == 1) {
+//                amountLabels[i].innerText = recipeIngredientsCalculate[i].SingularMeasurement;
+//            } else {
+//                amountLabels[i].innerText = recipeIngredientsCalculate[i].PluralMeasurement;
+//            }
+//        }
+//    }
 
-    priorServingSize = newServingSize;
-});
+//    priorServingSize = newServingSize;
+//});
 
 
 

@@ -47,7 +47,7 @@ function OnError(data) {
 function RecipesClick() {
 
     var index = parseInt(this.id);
-
+    recipeNum = index;
     DisplayRecipe(index);
 }
 
@@ -73,6 +73,8 @@ function DisplayRecipe(index) {
     $authorContainer.text(recipeAuthor);
 
     //fill ingredients
+    $("#serving-size").val(initialServingSize);
+    priorServingSize = initialServingSize;
     $ingredientsContainer = $("#ingredients-container");
     var ingredientsContent = IngredientsContent(index);
     $ingredientsContainer.html(ingredientsContent);
@@ -88,26 +90,42 @@ function DisplayRecipe(index) {
 /***********************   ALIGN SEARCH SCROLL WITH SEARCH BOX   ************************/
 
 $("#get-recipe-name").keyup(function () {
-    var searchInput = $("#get-recipe-name").val().toString();
+    var searchInput = $("#get-recipe-name").val().toString().toLowerCase();
     var searchLength = searchInput.length;
     var numberOfRecipes = recipesDB.length;
     var recipeNameLength;
+    var bestMatchId = 0;
+    var bestMatchValue = 0;
 
     var height = $(".name-and-image").height();
     var width = $(".name-and-image").width();
+                                           
+        for (var x = 0; x < numberOfRecipes; x++) {                                     
+            var recipeName = recipesDB[x].recipeNameDB.toString().toLowerCase();
+            var match = 0;
+            for (var y = 0; y < recipeName.length && y < searchLength; y++) {
 
-    for (var i = 0; i < searchLength; i++) {       //this isn't finished because it only looks at first letter
-        for (var x = 0; x < numberOfRecipes; x++) {
-            var recipeName = recipesDB[x].recipeNameDB.toString();
-            if (recipeName.charAt(0) == searchInput.charAt(0)) {
-                if (pageSize >= 4) {
-                    $("#search-wrapper").scrollTop(height * x);
-                }
-                else {
-                    $("#search-wrapper").scrollLeft(width * x);
+                if (recipeName.charAt(y) == searchInput.charAt(y)) {
+                    match++;
+                    if (y == (recipeName.length - 1) || y == (searchLength - 1)) {
+                        if (match > bestMatchValue) {
+                            bestMatchValue = match;
+                            bestMatchId = x;
+                        }
+                    }
+                } else if (recipeName.charAt(y) != searchInput.charAt(y)) {
+                    if (match > bestMatchValue) {
+                        bestMatchValue = match;
+                        bestMatchId = x;                       
+                    }
+                    break;                    
                 }
             }
-            
+        if (pageSize >= 4) {
+            $("#search-wrapper").scrollTop(height * bestMatchId);
+        }
+        else {
+            $("#search-wrapper").scrollLeft(width * bestMatchId);
         }
     }
 });

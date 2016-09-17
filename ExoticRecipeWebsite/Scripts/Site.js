@@ -103,6 +103,9 @@ function IngredientsContent(recipe) {
     return ingredientsContent;
 }
 
+
+/******************   RETURNS CONTENT OF INSTRUCTIONS CONTAINER   ****************/
+
 function InstructionsContent(recipe) {
     var recipeInstructions = JSON.parse(recipesDB[recipe].recipeInstructionsDB);
     var instructionsContent = "";
@@ -113,3 +116,39 @@ function InstructionsContent(recipe) {
     
     return instructionsContent;
 }
+
+
+//*********************   MAKING THE 'SUBMIT' BUTTON WORK FOR THE INGRDIENTS  *****************************
+
+var numericalAmounts = document.getElementsByClassName("numerical-amounts");
+var amountLabels = document.getElementsByClassName("amount-labels");
+var newIngredientAmount = 0;
+var newServingSize = 0;
+var priorIngredientAmount = 0;
+var newIngredientAmount = 0;
+var initialServingSize = $("#serving-size").val();
+var priorServingSize = initialServingSize;
+
+$("#ingredient-button").click(function () {
+    console.log("clicking");
+    newServingSize = parseFloat(document.getElementById("serving-size").value);
+    var recipeIngredientsCalculate = JSON.parse(recipesDB[recipeNum].recipeIngredientsDB);
+
+    for (var i = 0; i < numericalAmounts.length; i++) {
+        priorIngredientAmount = parseFloat(numericalAmounts[i].innerText);
+
+        if (priorIngredientAmount > 0) {
+            newIngredientAmount = (priorIngredientAmount / priorServingSize) * newServingSize;
+            newIngredientAmount = Math.round(newIngredientAmount * 100) / 100;
+            numericalAmounts[i].innerText = newIngredientAmount;
+
+            if (newIngredientAmount == 1) {
+                amountLabels[i].innerText = recipeIngredientsCalculate[i].SingularMeasurement;
+            } else {
+                amountLabels[i].innerText = recipeIngredientsCalculate[i].PluralMeasurement;
+            }
+        }
+    }
+
+    priorServingSize = newServingSize;
+});
