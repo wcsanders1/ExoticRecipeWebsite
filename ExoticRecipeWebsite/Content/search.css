@@ -15,6 +15,7 @@
     font-family: Idion, sans-serif;
     font-size: 1.25em;
     color: #DFE2DB;
+    padding-top: 30px;
 }
 
 .name-and-image {
@@ -29,11 +30,16 @@
     margin-bottom: 15px;
 }
 
+.recipes-in-panel {
+    width: 100px;
+}
+
 #search-recipes-by-name {
     align-self: center;
     margin-top: 20px;
     font-family: Idion, sans-serif;
     font-size: 1.5em;
+    margin-bottom: 20px;
 }
 
 #get-recipe-name {
@@ -42,7 +48,8 @@
 
 #print-wrapper {
     width: 90%;
-    margin: 5%;
+    margin: 0 5%;
+    margin-bottom: 3%;
     min-height: 400px;
     display: flex;
     flex-direction: column;
@@ -73,6 +80,7 @@
     font-size: 1.5em;
     background-color: #DFE2DB;
     border: 2px solid;
+    width: 350px;
 }
 
 #image {
@@ -102,7 +110,7 @@
     width: 40px;
     height: 40px;
     padding: 10px;
-    margin: 5px;
+    margin: 20px;
     background-color: #1A5276;
     box-shadow:  -10px -10px 10px rgba(60,60,60, 1);
     color: aliceblue;
@@ -128,6 +136,10 @@
         width: 200px;
     }
 
+    .recipes-in-panel {
+        width: 200px;
+    }
+
     #caption {
         width: 350px;
     }
@@ -145,7 +157,7 @@
 
 
 
-/*********************   FULL-SIZE   *******************************************/
+/*********************   SEMI-FULL SIZE   *******************************************/
 
 @media screen and (min-width: 1200px) {
 
@@ -160,7 +172,7 @@
     #print-wrapper {
         min-height: 550px;
         margin-top: 3%;
-        margin-bottom: 3%;
+        margin-bottom: 2%;
     }
 
     
