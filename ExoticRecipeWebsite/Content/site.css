@@ -256,12 +256,12 @@ footer {
     font-size: 2em;
 }
 
-.ingredients-headline {
+#ingredients-headline {
     display: flex;
     align-self: flex-start;
     order: 0;
-    margin: -80px 0 40px 0;
-    font-size: 2em;
+    margin: -67px 0 40px 0;
+    font-size: 1.5em;
     font-family: Wonki, sans-serif;
 }
 
@@ -269,7 +269,7 @@ footer {
 }
 
 .ingredients {
-    width: 350px;
+    width: 300px;
     border: solid;
     order: 1;
     margin-top: 40px;
@@ -285,6 +285,10 @@ footer {
     background-color: #DFE2DB;
 }
 
+#ingredients-container li {
+    font-size: .65em;
+}
+
 .serving-size-input {
     margin-bottom: 20px;
     border-bottom: solid 1px;
@@ -294,6 +298,10 @@ footer {
         box-shadow: inset 2px 2px rgba(0,0,0, .15);
         text-align: center;
     }
+
+#serving-size {
+    max-width: 50px;
+}
 
 .ingredient-lists-container {
     display: flex;
@@ -388,13 +396,14 @@ footer {
     order: -1;
     background-color: #DFE2DB;
     margin-bottom: 20px;
+    width: 300px;
 }
 
 .recipe-of-day-figure {
     display: table;
     align-items: center;
     margin: 0;
-    width: 350px;
+    width: 300px;
     height: 300px;
     border: solid;
     box-shadow: -10px -10px 10px rgba(60,60,60, 1);
@@ -402,7 +411,7 @@ footer {
 
     .recipe-of-day-figure img {
         position: relative;
-        width: 350px;
+        width: 300px;
     }
 
     .recipe-of-day-figure figcaption {
@@ -424,7 +433,7 @@ footer {
 
 .instructions {
     order: 2;
-    width: 350px;
+    width: 300px;
     border: solid;
     margin-top: 40px;
     margin-bottom: 20px;
@@ -443,37 +452,66 @@ footer {
         padding-left: 30px;
     }
 
-.instructions-headline {
-    margin: -80px 0 40px 0;
-    font-size: 2em;
+#instructions-headline {
+    margin: -67px 0 40px 0;
+    font-size: 1.5em;
     font-family: Wonki, sans-serif;
 }
 
+#instructions-container li {
+    font-size: .65em;
+}
+
 #overlay {
-    z-index: 7; /* this # used to sync jquery with css w/r/t responsiveness */
+    z-index: 6; /* this # used to sync jquery with css w/r/t responsiveness */
 }
 
 
 
-/*********************************
-    SEARCH PAGE  [in own file]
-**********************************/
 
+/*****************************************
+    FOR SEMI-SEMI-FULL-SCREEN SIZE
+*****************************************/
 
+@media screen and (min-width: 700px) {
 
-/*********************************
-    CONTACT PAGE [in own file]
-**********************************/
+    #overlay {
+        z-index: 7;
+    }
 
+    #ingredients {
+        width: 400px;        
+    }
 
+    #ingredients-headline {
+        font-size: 2em;
+        margin: -80px 0 40px 0;
+    }
 
+    #ingredients-container li {
+        font-size: .8em;
+    }
 
+    #instructions {
+        width: 400px;
+    }
+
+    #instructions-container li {
+        font-size: .8em;
+    }
+
+    #instructions-headline {
+        font-size: 2em;
+        margin: -80px 0 40px 0;
+    }
+
+}
 
 
 /***************************************************************************************
-    FOR SEMI-SEMI-FULL-SCREEN SIZE
+    FOR SEMI-FULL-SCREEN SIZE
 ****************************************************************************************/
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1400px) {
 
     .header-menu li {
         display: inline-block;
@@ -576,30 +614,6 @@ footer {
 }
 
 
-/*****************************************
-    FOR SEMI-FULL-SCREEN SIZE
-*****************************************/
-
-@media screen and (min-width: 1050px) {
-
-
-
-    /*.recipe-name-container {
-        font-size: 3em;
-    }*/
-
-
-
-
-
-    /*#overlay {
-        z-index: 9;
-    }*/
-
-
-}
-
-
 
 
 /*****************************************
@@ -627,7 +641,11 @@ footer {
         position: relative;
         margin-left: 0;
         border-left: 0;
-        margin-bottom: 0;
+        margin-bottom: 20px;
+    }
+
+    #ingredients-container li {
+        font-size: 1em;
     }
 
     #recipe-of-day-container {
@@ -638,7 +656,7 @@ footer {
         margin-left: 0;
         margin-right: 0;
         z-index: 1;
-        margin-bottom: 0;
+        margin-bottom: 20px;
     }
 
     .recipe-name-container h1 {
@@ -655,6 +673,11 @@ footer {
         border-left: solid;
         border-right: 0;
         flex-basis: initial;
+        margin-bottom: 20px;
+    }
+
+    #instructions-container li {
+        font-size: 1em;
     }
 
     #overlay {
@@ -735,6 +758,7 @@ footer {
     padding: 10px;
     color: #fff;
     font-size: 12px;
+    z-index: 5;
 }
 
 

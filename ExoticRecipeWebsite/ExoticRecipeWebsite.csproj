@@ -117,7 +117,9 @@
     <Content Include="Global.asax" />
     <Content Include="images\Bill_picture.gif" />
     <Content Include="images\bowl_of_steaming_soup_clip_art_13404.gif" />
+    <Content Include="images\cardamon-cocoa.gif" />
     <Content Include="images\Eppel-gek.gif" />
+    <Content Include="images\liquor.gif" />
     <Content Include="images\old_world_map.gif" />
     <Content Include="images\onions_with_ginger.gif" />
     <Content Include="images\pepper-cilantro.gif" />

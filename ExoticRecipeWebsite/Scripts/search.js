@@ -73,8 +73,7 @@ function DisplayRecipe(index) {
     $authorContainer.text(recipeAuthor);
 
     //fill ingredients
-    $("#serving-size").val(initialServingSize);
-    priorServingSize = initialServingSize;
+    $("#serving-size").val(INITIAL_SERVING_SIZE);
     $ingredientsContainer = $("#ingredients-container");
     var ingredientsContent = IngredientsContent(index);
     $ingredientsContainer.html(ingredientsContent);

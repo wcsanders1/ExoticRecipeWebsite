@@ -2,6 +2,7 @@
 
 var recipesDB;
 var recipeNum = 0;
+var INITIAL_SERVING_SIZE = 4;
 
 
 /*************************   COMMON FUNCTIONS   *************************************/
@@ -33,8 +34,7 @@ $(document).ready(function () {
 /*******************************   FILLS THE INGREDIENTS, PICTURE, AND INSTRUCTIONS BOXES WITH RECIPE   ********************************/
 
 function SetRecipe(recipe) {
-    $("#serving-size").val(initialServingSize);
-    priorServingSize = initialServingSize;
+    $("#serving-size").val(INITIAL_SERVING_SIZE);
 
     var $recipeImage = $("#recipe-image");
     var $recipeName = $("#recipe-name");
@@ -118,27 +118,47 @@ function InstructionsContent(recipe) {
 }
 
 
-//*********************   MAKING THE 'SUBMIT' BUTTON WORK FOR THE INGRDIENTS  *****************************
+/**********************   MAKING INGREDIENT LABEL ACCEPT ONLY INTS BETWEEN 1 AND 20   ****************************/
 
-var numericalAmounts = document.getElementsByClassName("numerical-amounts");
-var amountLabels = document.getElementsByClassName("amount-labels");
-var newIngredientAmount = 0;
-var newServingSize = 0;
-var priorIngredientAmount = 0;
-var newIngredientAmount = 0;
-var initialServingSize = $("#serving-size").val();
-var priorServingSize = initialServingSize;
+$servingSize = $("#serving-size");
+
+$servingSize.keypress(function (e) {
+   
+    if ($servingSize.val().length > 2 || e.which < 48 || e.which > 57) {
+        return false;
+    }
+});
+
+$servingSize.keyup(function () {
+    if ($servingSize.val() > 20) {
+        $servingSize.val(20);
+    }
+});
+
+//*********************   MAKING THE INGREDIENT BUTTON CALCULATE INGREDIENT AMOUNTS  *****************************
+
 
 $("#ingredient-button").click(function () {
-    console.log("clicking");
-    newServingSize = parseFloat(document.getElementById("serving-size").value);
+    var numericalAmounts = document.getElementsByClassName("numerical-amounts");
+    var amountLabels = document.getElementsByClassName("amount-labels");
+    var newIngredientAmount = 0;
+    var newServingSize = 0;
+    var initialAmount;
+    var singleServingSize;
+
+    if ($servingSize.val() == "" || parseInt($servingSize.val()) == 0) {
+        $servingSize.val(4);
+    }
+
+    newServingSize = parseInt($servingSize.val());
     var recipeIngredientsCalculate = JSON.parse(recipesDB[recipeNum].recipeIngredientsDB);
 
     for (var i = 0; i < numericalAmounts.length; i++) {
-        priorIngredientAmount = parseFloat(numericalAmounts[i].innerText);
+        initialAmount = parseFloat(recipeIngredientsCalculate[i].Amount);
 
-        if (priorIngredientAmount > 0) {
-            newIngredientAmount = (priorIngredientAmount / priorServingSize) * newServingSize;
+        if (initialAmount > 0) {
+            singleServingSize = initialAmount / INITIAL_SERVING_SIZE;
+            newIngredientAmount = singleServingSize * newServingSize;
             newIngredientAmount = Math.round(newIngredientAmount * 100) / 100;
             numericalAmounts[i].innerText = newIngredientAmount;
 
@@ -149,6 +169,4 @@ $("#ingredient-button").click(function () {
             }
         }
     }
-
-    priorServingSize = newServingSize;
 });
