@@ -1,6 +1,7 @@
 ﻿var pageSize = $("#search-page-measurement").css("z-index");
+var chosenRecipe;
+var suggestedRecipe = null;
 
-/*****************  AJAX TO DATABASE ON SEARCH PAGE   ************************/
 
 
 $(document).ready(function () {
@@ -10,7 +11,16 @@ $(document).ready(function () {
 
 $(window).resize(function () {
     pageSize = $("#search-page-measurement").css("z-index");
+
+    if (suggestedRecipe != null) {
+        ScrollToRecipe(suggestedRecipe);
+    } else {
+        ScrollToRecipe(chosenRecipe);
+    }
 });
+
+
+/*****************  AJAX TO DATABASE ON SEARCH PAGE   ************************/
 
 function OnSuccess(data) {
     var content = "";
@@ -37,18 +47,30 @@ function OnSuccess(data) {
         $("#search-wrapper").append($names[i]);
     }
 
-    DisplayRecipe(0);  //make this display recipe that was displayed on home page
+    chosenRecipe = 0;
+    RecipeChosen(chosenRecipe);
+    recipeNum = chosenRecipe;
+    DisplayRecipe(chosenRecipe);  //make this display recipe that was displayed on home page
 }
 
 function OnError(data) {
-
+    
 }
 
-function RecipesClick() {
+/****************   WHEN A RECIPE IS CLICKED   *********************************/
 
+function RecipesClick() {
     var index = parseInt(this.id);
+    RecipeChosen(index);
     recipeNum = index;
     DisplayRecipe(index);
+}
+
+function RecipeChosen(index) {
+    $(".search-image").removeClass("chosen suggested-recipe");
+    var recipeImages = document.getElementsByClassName("search-image");
+    recipeImages[index].classList.add("chosen");
+    chosenRecipe = index;
 }
 
 function DisplayRecipe(index) {
@@ -86,20 +108,26 @@ function DisplayRecipe(index) {
 
 
 
-/***********************   ALIGN SEARCH SCROLL WITH SEARCH BOX   ************************/
+/***********************   ALIGN SEARCH SCROLL WITH SEARCH BOX AND HIGHLIGHT IMAGE   ************************/
 
-$("#get-recipe-name").keyup(function () {
-    var searchInput = $("#get-recipe-name").val().toString().toLowerCase();
-    var searchLength = searchInput.length;
-    var numberOfRecipes = recipesDB.length;
-    var recipeNameLength;
-    var bestMatchId = 0;
-    var bestMatchValue = 0;
+$("#get-recipe-name").keyup(function (e) {
+    if (e.which != 13) {
+        console.log("changing");
+        var searchInput = $("#get-recipe-name").val().toString().toLowerCase();
+        var searchLength = searchInput.length;
+        var numberOfRecipes = recipesDB.length;
+        var recipeNameLength;
+        var bestMatchId = null;
+        var bestMatchValue = 0;
 
-    var height = $(".name-and-image").height();
-    var width = $(".name-and-image").width();
-                                           
-        for (var x = 0; x < numberOfRecipes; x++) {                                     
+        if (searchLength == 0) {
+            HighlightRecipe(false, null);
+            ScrollToRecipe(chosenRecipe);
+            suggestedRecipe = null;
+            return;
+        }
+
+        for (var x = 0; x < numberOfRecipes; x++) {
             var recipeName = recipesDB[x].recipeNameDB.toString().toLowerCase();
             var match = 0;
             for (var y = 0; y < recipeName.length && y < searchLength; y++) {
@@ -115,19 +143,53 @@ $("#get-recipe-name").keyup(function () {
                 } else if (recipeName.charAt(y) != searchInput.charAt(y)) {
                     if (match > bestMatchValue) {
                         bestMatchValue = match;
-                        bestMatchId = x;                       
+                        bestMatchId = x;
                     }
-                    break;                    
+                    break;
                 }
             }
-        if (pageSize >= 4) {
-            $("#search-wrapper").scrollTop(height * bestMatchId);
         }
-        else {
-            $("#search-wrapper").scrollLeft(width * bestMatchId);
+        if (bestMatchId != null) {
+            suggestedRecipe = bestMatchId;
+            ScrollToRecipe(bestMatchId);
+            HighlightRecipe(true, bestMatchId);
         }
     }
 });
+
+function ScrollToRecipe(index) {
+    var height = $(".name-and-image").height();
+    var width = $(".name-and-image").width();
+
+    if (pageSize >= 4) {
+        $("#search-wrapper").scrollTop(height * index);
+    }
+    else {
+        $("#search-wrapper").scrollLeft(width * index);
+    }
+}
+
+function HighlightRecipe(highlight, index) {
+    $(".recipes-in-panel").removeClass("suggested-recipe");
+
+    if (highlight) {
+        var recipeNames = document.getElementsByClassName("recipes-in-panel");
+        recipeNames[index].classList.add("suggested-recipe");
+    }
+}
+
+/*******************   PRESS ENTER IN SEARCH INPUT BOX   ******************/
+
+$("#get-recipe-name").keypress(function (e) {
+    if (suggestedRecipe != null) {
+        if (e.which == 13) {
+            RecipeChosen(suggestedRecipe);
+            recipeNum = suggestedRecipe;
+            DisplayRecipe(suggestedRecipe);
+        }
+    }
+});
+
 
 
 /*****************   PRINT RECIPE   ******************************/

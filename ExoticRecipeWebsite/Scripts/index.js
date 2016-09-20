@@ -88,7 +88,10 @@ $(".recipe-of-day-figure img").click(function () {
 
 $overlay.click(function () {
     $(this).slideUp();
-    loop = true;
+
+    if (!$("#pause-scroll").hasClass("activeCustom")) {
+        loop = true;
+    }
 });
 
 $(window).resize(function () {
@@ -113,40 +116,7 @@ $(".recipe-of-day-figure img").hover(function () {
     $(".tooltip").css({ top: mousey, left: mousex });
 });
 
-
-
-
-////*********************   MAKING THE 'SUBMIT' BUTTON WORK FOR THE INGRDIENTS  *****************************
-
-//var numericalAmounts = document.getElementsByClassName("numerical-amounts");
-//var amountLabels = document.getElementsByClassName("amount-labels");
-//var newIngredientAmount = 0;
-//var newServingSize = 0;
-//var priorIngredientAmount = 0;
-//var newIngredientAmount = 0;
-
-//$("#ingredient-button").click(function () {
-//    newServingSize = parseFloat(document.getElementById("serving-size").value);
-//    var recipeIngredientsCalculate = JSON.parse(recipesDB[recipeNum].recipeIngredientsDB);
-
-//    for (var i = 0; i < numericalAmounts.length; i++) {
-//        priorIngredientAmount = parseFloat(numericalAmounts[i].innerText);
-
-//        if (priorIngredientAmount > 0) {
-//            newIngredientAmount = (priorIngredientAmount / priorServingSize) * newServingSize;
-//            newIngredientAmount = Math.round(newIngredientAmount * 100) / 100;
-//            numericalAmounts[i].innerText = newIngredientAmount;
-
-//            if (newIngredientAmount == 1) {
-//                amountLabels[i].innerText = recipeIngredientsCalculate[i].SingularMeasurement;
-//            } else {
-//                amountLabels[i].innerText = recipeIngredientsCalculate[i].PluralMeasurement;
-//            }
-//        }
-//    }
-
-//    priorServingSize = newServingSize;
-//});
+/*****************   MISC.   **********************************************************/
 
 
 

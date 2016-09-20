@@ -24,6 +24,15 @@
     margin: 0 5px;
 }
 
+.chosen {
+    border: 4px solid crimson; 
+}
+
+.suggested-recipe {
+    background-color: wheat;
+    color: #191919;
+}
+
 .search-image {
     height: 100px;
     width: 100px;
@@ -195,6 +204,7 @@
 
     #image {
         order: 0;
+        margin: 0 10%;
         margin-bottom: initial;
     }
   
@@ -210,10 +220,6 @@
 
     #author-wrapper-search {
         align-self: flex-start;
-    }
-
-    #image {
-        margin: 0 10%;
     }
 
     #ingredients {

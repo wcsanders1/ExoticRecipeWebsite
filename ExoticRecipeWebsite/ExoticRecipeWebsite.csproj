@@ -125,8 +125,10 @@
     <Content Include="images\pepper-cilantro.gif" />
     <Content Include="images\raw-pasta.gif" />
     <Content Include="images\salt_and_coffee.gif" />
+    <Content Include="images\sylvan.gif" />
     <Content Include="images\Syrian-waffles.gif" />
     <Content Include="images\Tazmanian_sizzler.gif" />
+    <Content Include="images\ziffledon.gif" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\Handi.otf" />
