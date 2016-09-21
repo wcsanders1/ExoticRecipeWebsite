@@ -233,16 +233,35 @@ footer {
     color: #DFE2DB;
     font-family: Idion;
     font-size: 1.2em;
-    height: 5vh;
+    min-height: 5vh;
     width: 100%;
     position: relative;
     align-self: flex-end;
-    margin-top: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
 }
 
-    footer p {
-        margin-left: 40px;
-    }
+#footer-name-and-email-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+#footer-name {
+    
+}
+
+#footer-github {
+
+}
+
+#footer-github img {
+    height: 30px;
+    width: 30px;
+    
+}
 
 .recipe-name-container {
     display: flex;

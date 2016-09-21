@@ -105,9 +105,27 @@ namespace ExoticRecipeWebsite.Data
                 {
                     recipeNameDB = "Ziffledon With Seeds",
                     recipeImageDB = "../images/ziffledon.gif",
-                    recipeDescriptionDB = "FDR had a bowl of this every morning before he even considered tinkering with the value of the dollar. Whether you're a president, priest, or pauper, this concoction will sitr your imagination fill you right up.",
+                    recipeDescriptionDB = "FDR had a bowl of this every morning before he even considered tinkering with the value of the dollar. Whether you're a president, priest, or pauper, this concoction will sitr your imagination and fill you right up.",
                     recipeIngredientsDB = "[{\"Ingredient\": \"Rye\", \"Amount\": \".32\", \"SingularMeasurement\": \"drop\", \"PluralMeasurement\": \"drops\"}, {\"Ingredient\": \"Electricity\", \"Amount\": \"191\", \"SingularMeasurement\": \"volt\", \"PluralMeasurement\": \"volts\"}, {\"Ingredient\": \"Ham\", \"Amount\": \"5\", \"SingularMeasurement\": \"slab\", \"PluralMeasurement\": \"slabs\"}, {\"Ingredient\": \"Small Pebbles\", \"Amount\": \"1\", \"SingularMeasurement\": \"hat-full\", \"PluralMeasurement\": \"hats-full\"}, {\"Ingredient\": \"Texas Salt\", \"Amount\": \"0.8\", \"SingularMeasurement\": \"carafe\", \"PluralMeasurement\": \"carafes\"}, {\"Ingredient\": \"Flounder\", \"Amount\": \"4\", \"SingularMeasurement\": \"piece\", \"PluralMeasurement\": \"pieces\"}, {\"Ingredient\": \"Yolk\", \"Amount\": \"58.1\", \"SingularMeasurement\": \"helping\", \"PluralMeasurement\": \"helpings\"}]",
                     recipeInstructionsDB = "{\"1\": \"If the self is a delusion, from where does it arise?\", \"2\": \"Heat the milk till boiling.\", \"3\": \"Allow the milk to simmer while covered, and add salt to taste.\", \"4\": \"If the beginning was a singularity, what changed it?\", \"5\": \"Peel some ginger and place it gently in the foaming milk.\", \"6\": \"Accept the mystery.\"}",
+                    recipeAuthorDB = "Bill Sanders"
+                },
+                new Table()
+                {
+                    recipeNameDB = "Meat and Vegetables Over Rice",
+                    recipeImageDB = "../images/meat-veg-rice.gif",
+                    recipeDescriptionDB = "Although rarely found nowadays, this was once a staple of the ancient Peruvians.",
+                    recipeIngredientsDB = "[{\"Ingredient\": \"Chickpeas\", \"Amount\": \"72\", \"SingularMeasurement\": \"vessle\", \"PluralMeasurement\": \"vessles\"}, {\"Ingredient\": \"Ballons\", \"Amount\": \"2\", \"SingularMeasurement\": \"basket\", \"PluralMeasurement\": \"baskets\"}, {\"Ingredient\": \"Square Roots\", \"Amount\": \"3.9\", \"SingularMeasurement\": \"concept\", \"PluralMeasurement\": \"concepts\"}, {\"Ingredient\": \"Grass Clippings\", \"Amount\": \"90\", \"SingularMeasurement\": \"bag\", \"PluralMeasurement\": \"bags\"}, {\"Ingredient\": \"Mollusks\", \"Amount\": \"8\", \"SingularMeasurement\": \"seabed\", \"PluralMeasurement\": \"seabeds\"}]",
+                    recipeInstructionsDB = "{\"1\": \"Claim your space in the kitchen.\", \"2\": \"Claim your space outside as well, because you'll be there before long.\", \"3\": \"Add water to taste.\", \"4\": \"Add crackers and seafood, a little at a time.\", \"5\": \"Burn the oil off the top.\", \"6\": \"And there you are!\", \"7\": \"Have the elders to the table, and beg them please be seated.\"}",
+                    recipeAuthorDB = "Bill Sanders"
+                },
+                new Table()
+                {
+                    recipeNameDB = "Hen Orphan",
+                    recipeImageDB = "../images/hen-orphan.gif",
+                    recipeDescriptionDB = "The few who've been lucky enough to have supped of this rarest of recipes have said little of it. Its essence is truly ineffable. Yet, to taste it is to attain perfect knowledge of flavor, if only for a little while.",
+                    recipeIngredientsDB = "[{\"Ingredient\": \"Baubles\", \"Amount\": \"0.04\", \"SingularMeasurement\": \"rack\", \"PluralMeasurement\": \"racks\"}, {\"Ingredient\": \"Pineapple Moss\", \"Amount\": \"59.2\", \"SingularMeasurement\": \"layer\", \"PluralMeasurement\": \"layers\"}, {\"Ingredient\": \"Iron\", \"Amount\": \"90\", \"SingularMeasurement\": \"rail\", \"PluralMeasurement\": \"rails\"}, {\"Ingredient\": \"Sugar\", \"Amount\": \"100\", \"SingularMeasurement\": \"pot\", \"PluralMeasurement\": \"pots\"}, {\"Ingredient\": \"Apple Gravy\", \"Amount\": \"15\", \"SingularMeasurement\": \"quarter\", \"PluralMeasurement\": \"quarters\"}, {\"Ingredient\": \"Muffins\", \"Amount\": \".93\", \"SingularMeasurement\": \"tray\", \"PluralMeasurement\": \"trays\"}, {\"Ingredient\": \"Light\", \"Amount\": \"7\", \"SingularMeasurement\": \"ray\", \"PluralMeasurement\": \"rays\"}]",
+                    recipeInstructionsDB = "{\"1\": \"Don't pay homage to pop-culture pieties.\", \"2\": \"Burn the fond off the grill.\", \"3\": \"Tell your neighbors how quiet they are, and why that's good.\", \"4\": \"Be careful about overcooking the fond; add a little water if necessary for taste.\"}",
                     recipeAuthorDB = "Bill Sanders"
                 }
             };

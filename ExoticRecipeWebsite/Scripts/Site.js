@@ -7,6 +7,7 @@ var INITIAL_SERVING_SIZE = 4;
 
 /*************************   COMMON FUNCTIONS   *************************************/
 
+
 function CallDatabase() {
     $.ajax({
         async: false,
