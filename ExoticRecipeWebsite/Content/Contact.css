@@ -7,15 +7,15 @@
     align-items: flex-start;
     justify-content: flex-start;
     margin: 10%;
-    margin-bottom: 2%;
+    margin-top: 50px;
+    margin-bottom: 20px;
     border: 4px double;
     padding: 10px;
     background-color: #e6b800;
-    
 }
 
 #container-body-content {
-    /*margin: auto 0;*/           /*doesn't work in IE*/
+    /*margin: auto 0;*/ /*doesn't work in IE*/
     /*margin-top: 25vh;*/
 }
 
@@ -39,12 +39,18 @@
 
 #contact-container {
     display: flex;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
     flex-direction: column;
     align-items: center;
 }
 
 #my-name {
     padding-top: 20px;
+}
+
+#email-link {
+    font-size: 1em;
 }
 
 
@@ -57,12 +63,11 @@
 }
 
 @media screen and (min-width: 1000px) {
-    
+
     #contact-page-wrapper {
-        margin-top: 10%;
+        margin-top: 100px;
         margin-left: 20%;
         margin-right: 20%;
-        margin-bottom: 0;
     }
 
     #contact-information {

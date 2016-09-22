@@ -115,6 +115,7 @@
     <Content Include="fonts\Font Awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="images\bells-haven.gif" />
     <Content Include="images\Bill_picture.gif" />
     <Content Include="images\bowl_of_steaming_soup_clip_art_13404.gif" />
     <Content Include="images\cardamon-cocoa.gif" />
@@ -122,6 +123,7 @@
     <Content Include="images\GitHub-Mark-Light-64px.png" />
     <Content Include="images\GitHub_Logo.png" />
     <Content Include="images\hen-orphan.gif" />
+    <Content Include="images\idle-hands.gif" />
     <Content Include="images\liquor.gif" />
     <Content Include="images\meat-veg-rice.gif" />
     <Content Include="images\old_world_map.gif" />

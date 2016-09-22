@@ -111,19 +111,22 @@ function DisplayRecipe(index) {
 /***********************   ALIGN SEARCH SCROLL WITH SEARCH BOX AND HIGHLIGHT IMAGE   ************************/
 
 $("#get-recipe-name").keyup(function (e) {
-    if (e.which != 13) {
-        console.log("changing");
-        var searchInput = $("#get-recipe-name").val().toString().toLowerCase();
+    $searchResponse = $("#search-response");
+    $getRecipeName = $("#get-recipe-name");
+
+    if (e.which != 13) {            // if not press "enter"
+        var searchInput = $getRecipeName.val().toString().toLowerCase();
         var searchLength = searchInput.length;
         var numberOfRecipes = recipesDB.length;
         var recipeNameLength;
-        var bestMatchId = null;
         var bestMatchValue = 0;
+        var bestMatchId = null;
 
         if (searchLength == 0) {
             HighlightRecipe(false, null);
             ScrollToRecipe(chosenRecipe);
             suggestedRecipe = null;
+            $searchResponse.html("");
             return;
         }
 
@@ -153,6 +156,22 @@ $("#get-recipe-name").keyup(function (e) {
             suggestedRecipe = bestMatchId;
             ScrollToRecipe(bestMatchId);
             HighlightRecipe(true, bestMatchId);
+            $searchResponse.html("Are you looking for " + recipesDB[bestMatchId].recipeNameDB + "?<br>" + "If so, press enter.");
+            $searchResponse.css("color", "inherit");
+        }
+
+        if (searchLength > 0 && bestMatchId == null) {
+            $searchResponse.html("Sorry. Your search yields no results.");
+            $searchResponse.css("color", "crimson");
+            suggestedRecipe = null;
+        }
+    } else if (e.which == 13) {             // if press "enter"
+        if (suggestedRecipe != null) {
+            RecipeChosen(suggestedRecipe);
+            recipeNum = suggestedRecipe;
+            DisplayRecipe(suggestedRecipe);
+            $getRecipeName.val("");
+            $searchResponse.html("");
         }
     }
 });
@@ -177,18 +196,6 @@ function HighlightRecipe(highlight, index) {
         recipeNames[index].classList.add("suggested-recipe");
     }
 }
-
-/*******************   PRESS ENTER IN SEARCH INPUT BOX   ******************/
-
-$("#get-recipe-name").keypress(function (e) {
-    if (suggestedRecipe != null) {
-        if (e.which == 13) {
-            RecipeChosen(suggestedRecipe);
-            recipeNum = suggestedRecipe;
-            DisplayRecipe(suggestedRecipe);
-        }
-    }
-});
 
 
 

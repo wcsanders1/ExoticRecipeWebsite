@@ -127,6 +127,24 @@ namespace ExoticRecipeWebsite.Data
                     recipeIngredientsDB = "[{\"Ingredient\": \"Baubles\", \"Amount\": \"0.04\", \"SingularMeasurement\": \"rack\", \"PluralMeasurement\": \"racks\"}, {\"Ingredient\": \"Pineapple Moss\", \"Amount\": \"59.2\", \"SingularMeasurement\": \"layer\", \"PluralMeasurement\": \"layers\"}, {\"Ingredient\": \"Iron\", \"Amount\": \"90\", \"SingularMeasurement\": \"rail\", \"PluralMeasurement\": \"rails\"}, {\"Ingredient\": \"Sugar\", \"Amount\": \"100\", \"SingularMeasurement\": \"pot\", \"PluralMeasurement\": \"pots\"}, {\"Ingredient\": \"Apple Gravy\", \"Amount\": \"15\", \"SingularMeasurement\": \"quarter\", \"PluralMeasurement\": \"quarters\"}, {\"Ingredient\": \"Muffins\", \"Amount\": \".93\", \"SingularMeasurement\": \"tray\", \"PluralMeasurement\": \"trays\"}, {\"Ingredient\": \"Light\", \"Amount\": \"7\", \"SingularMeasurement\": \"ray\", \"PluralMeasurement\": \"rays\"}]",
                     recipeInstructionsDB = "{\"1\": \"Don't pay homage to pop-culture pieties.\", \"2\": \"Burn the fond off the grill.\", \"3\": \"Tell your neighbors how quiet they are, and why that's good.\", \"4\": \"Be careful about overcooking the fond; add a little water if necessary for taste.\"}",
                     recipeAuthorDB = "Bill Sanders"
+                },
+                new Table()
+                {
+                    recipeNameDB = "Idle Hands",
+                    recipeImageDB = "../images/idle-hands.gif",
+                    recipeDescriptionDB = "During the Great Depression, this was a staple of the scribes and a dessert of the destitute. Though rarely seen nowadays, its heady kick retains the vigor of youth, while its savor subtly alludes to a bygone era of hard-won virtue.",
+                    recipeIngredientsDB = "[{\"Ingredient\": \"Sauce\", \"Amount\": \"4.4\", \"SingularMeasurement\": \"bottle\", \"PluralMeasurement\": \"bottles\"}, {\"Ingredient\": \"Salt\", \"Amount\": \"2\", \"SingularMeasurement\": \"block\", \"PluralMeasurement\": \"blocks\"}, {\"Ingredient\": \"Yeast\", \"Amount\": \"0.5\", \"SingularMeasurement\": \"pail\", \"PluralMeasurement\": \"pails\"}, {\"Ingredient\": \"River\", \"Amount\": \"7\", \"SingularMeasurement\": \"tributary\", \"PluralMeasurement\": \"tributaries\"}, {\"Ingredient\": \"Beans\", \"Amount\": \"30\", \"SingularMeasurement\": \"plate\", \"PluralMeasurement\": \"plates\"}, {\"Ingredient\": \"Cloth\", \"Amount\": \"2.25\", \"SingularMeasurement\": \"bolt\", \"PluralMeasurement\": \"bolts\"}, {\"Ingredient\": \"Pressure\", \"Amount\": \"2\", \"SingularMeasurement\": \"peer\", \"PluralMeasurement\": \"peers\"}]",
+                    recipeInstructionsDB = "{\"1\": \"Brown the sugar for a good maillard reaction.\", \"2\": \"Add water to taste.\", \"3\": \"Do the best you can with what you have, considering what you know.\", \"4\": \"Dry all the vegetables in the sun for a good long while so as to preserve and protect them.\", \"5\": \"In the end, you'll realize there is no end, nor beginning.\"}",
+                    recipeAuthorDB = "Bill Sanders"
+                },
+                new Table()
+                {
+                    recipeNameDB = "Bell's Haven",
+                    recipeImageDB = "../images/bells-haven.gif",
+                    recipeDescriptionDB = "Some find it hard to pinpoint what exactly it is about this dish that mesmerizes and entrances. Some say it's the starch. Others swear it's the magnesium. Some even claim it's the ghosts of those who've supped past. Whichever it is, it's sure to please!",
+                    recipeIngredientsDB = "[{\"Ingredient\": \"Crust\", \"Amount\": \"4\", \"SingularMeasurement\": \"crumb\", \"PluralMeasurement\": \"crumbs\"}, {\"Ingredient\": \"Dried Lime\", \"Amount\": \"2\", \"SingularMeasurement\": \"share\", \"PluralMeasurement\": \"shares\"}, {\"Ingredient\": \"Corn\", \"Amount\": \"9\", \"SingularMeasurement\": \"cob\", \"PluralMeasurement\": \"cobs\"}, {\"Ingredient\": \"Allspice\", \"Amount\": \".35\", \"SingularMeasurement\": \"tsp\", \"PluralMeasurement\": \"tsps\"}, {\"Ingredient\": \"Old Snow\", \"Amount\": \"5\", \"SingularMeasurement\": \"ball\", \"PluralMeasurement\": \"balls\"}, {\"Ingredient\": \"Wine\", \"Amount\": \".24\", \"SingularMeasurement\": \"shot\", \"PluralMeasurement\": \"shots\"}]",
+                    recipeInstructionsDB = "{\"1\": \"Keeps your wits about.\", \"2\": \"Find the center and hold it.\", \"3\": \"Fold the ingredients till they're fluffed.\", \"4\": \"Don't be satisfied with good enough, unless that's better than what you'd thought would be sufficient.\", \"5\": \"Add salt to taste.\", \"6\": \"If you're under a delusion, you won't know it, so be humble.\"}",
+                    recipeAuthorDB = "Bill Sanders"
                 }
             };
 

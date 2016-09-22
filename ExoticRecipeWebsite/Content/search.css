@@ -51,6 +51,11 @@
     margin-bottom: 20px;
 }
 
+#search-response {
+    margin-top: 10px;
+    max-width: inherit;
+}
+
 #get-recipe-name {
     border: 1px solid;
 }
