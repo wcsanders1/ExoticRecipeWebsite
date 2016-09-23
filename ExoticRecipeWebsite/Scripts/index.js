@@ -72,10 +72,10 @@ var $caption = $("<p></p>");
 var $dish_image = $("<img>");
 $overlay.append($dish_image);
 $overlay.append($caption);
-$(".container-body-content").prepend($overlay);
+$("#container-body-content").prepend($overlay);
 $overlay.hide();
 
-$(".recipe-of-day-figure img").click(function () {
+$("#recipe-image").click(function () {
     if ($("#overlay").css("z-index") >= 8) {
         loop = false;
         var imageLocation = $(this).attr("src");
@@ -101,19 +101,19 @@ $(window).resize(function () {
 
 //******************* TOOLTIP FOR RECIPE PICTURE ****************
 
-var $tip = $("<p class='tooltip'>Click for larger view!</p>");
+var $tip = $("<p id='tooltip'>Click for larger view!</p>");
 
-$(".recipe-of-day-figure img").hover(function () {
+$("#recipe-image").hover(function () {
     if ($("#overlay").css("z-index") >= 8) {
-        $(".recipe-of-day-figure").append($tip);
+        $("#recipe-figure").append($tip);
         $tip.fadeIn("slow");
     }
 }, function () {
-    $(".tooltip").remove();
+    $("#tooltip").remove();
 }).mousemove(function (e) {
     var mousex = e.pageX - 50;
     var mousey = e.offsetY - 45;
-    $(".tooltip").css({ top: mousey, left: mousex });
+    $("#tooltip").css({ top: mousey, left: mousex });
 });
 
 /*****************   MISC.   **********************************************************/

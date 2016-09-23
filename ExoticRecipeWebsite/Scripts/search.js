@@ -177,8 +177,8 @@ $("#get-recipe-name").keyup(function (e) {
 });
 
 function ScrollToRecipe(index) {
-    var height = $(".name-and-image").height();
-    var width = $(".name-and-image").width();
+    var height = $(".name-and-image").outerHeight(true);
+    var width = $(".name-and-image").outerWidth(true);
 
     if (pageSize >= 4) {
         $("#search-wrapper").scrollTop(height * index);

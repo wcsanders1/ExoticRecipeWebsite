@@ -2,6 +2,8 @@
     ViewBag.Title = "Home";
 }
 
+<link href="~/Content/index.css" type="text/css" rel="stylesheet" />
+
 <div id="scroll-button-and-author-wrapper">
     <div id="scroll-button-wrapper">
         <script type="text/javascript">
@@ -26,9 +28,9 @@
     </div>
 </div>
 
-<div id="recipe-of-day-container" class="recipe-of-day-container">
+<div id="ingredients-figure-caption-wrapper">
 
-    <div id="ingredients" class="ingredients">
+    <div id="ingredients">
         <h1 id="ingredients-headline">Ingredients:</h1>
         <div id="serving-size-form-button-wrapper">
             <form id="serving-size-input" type="text" action="index.html" method="post">
@@ -43,14 +45,14 @@
         
     </div>
 
-    <div id="recipe-of-day" class="recipe-of-day">
-        <figure class="recipe-of-day-figure">
+    <div id="figure-caption-wrapper">
+        <figure id="recipe-figure">
             <img id="recipe-image" width="300" height="300" />
             <figcaption id="recipe-caption"></figcaption>
         </figure>
     </div>
 
-    <div id="instructions" class="instructions">
+    <div id="instructions">
         <h1 id="instructions-headline">Instructions:</h1>
         <ol id="instructions-container">
             @*FILLED IN BY SITE.JS*@
@@ -58,4 +60,4 @@
     </div>
 </div>
 
-<script src="~/Scripts/index.js"></script>
+<script src="~/Scripts/index.js" type="text/javascript"></script>

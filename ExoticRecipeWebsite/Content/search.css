@@ -24,6 +24,10 @@
     margin: 0 5px;
 }
 
+.name-and-image:hover {
+    cursor: pointer;
+}
+
 .chosen {
     border: 4px solid crimson; 
 }
@@ -90,8 +94,8 @@
     display: flex;
     flex-direction: column;
     box-shadow: inset 0 0 40px rgba(60,60,60, 1);
-    font-family: Idion, sans-serif;
-    font-size: 1.5em;
+    font-family: 'PT Serif', serif;
+    font-size: 1.25em;
     background-color: #DFE2DB;
     border: 2px solid;
     width: 275px;
@@ -216,7 +220,10 @@
     #caption-image-author-wrapper {
         flex-direction: row;
         align-items: flex-start;
-        margin-bottom: 50px;        
+        justify-content: space-between;
+        margin-bottom: 50px;
+        margin-left: 10%;
+        margin-right: 10%;        
     }
 
     #caption {
@@ -243,6 +250,9 @@
 
     #ingredients-instructions-wrapper {
         flex-direction: row;
+        justify-content: space-between;
+        margin-left: 10%;
+        margin-right: 10%;
     }
 
 }
@@ -250,7 +260,7 @@
 
 /*******************************   FULL SCREEN SIZE   ********************************************/
 
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: 1600px) {
     #search-page-measurement {
         z-index: 4;
     }
@@ -276,9 +286,21 @@
         align-self: flex-start;
         margin-top: 100px;
     }
+
+    #caption-image-author-wrapper {
+        margin-left: 0;
+        margin-right: 0;
+        justify-content: flex-start;
+    }
     
     #caption {
         width: 450px;
+    }
+
+    #ingredients-instructions-wrapper {
+        margin-left: 0;
+        margin-right: 0;
+        justify-content: flex-start;
     }
 
     #ingredients {
