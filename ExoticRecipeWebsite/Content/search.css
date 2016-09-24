@@ -53,15 +53,18 @@
     font-family: Idion, sans-serif;
     font-size: 1.5em;
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 #search-response {
     margin-top: 10px;
-    max-width: inherit;
+    max-width: 250px;
 }
 
 #get-recipe-name {
     border: 1px solid;
+    width: 250px;
 }
 
 #print-wrapper {
@@ -318,7 +321,8 @@
 
 @media print {
 
-    
+    @page { size: auto; margin: 0mm; }
+
     body {
         visibility: hidden;
     }
@@ -326,14 +330,20 @@
     header {
         height: 0;
     }
-    
-    @page { size: auto; margin: 0mm; }
 
     #caption-image-author-wrapper {
         flex-direction: row;
         align-items: flex-start;
         justify-content: space-between;    
         visibility: visible;    
+    }
+
+    #ingredients-headline {
+        margin: -56px 0 40px 0;
+    }
+
+    #instructions-headline {
+        margin: -56px 0 40px 0;
     }
     
     #ingredients-instructions-wrapper {
@@ -371,10 +381,6 @@
         width: 330px;
     }
 
-    #ingredients-container li {
-        font-size: 1em;
-    }
-
     #serving-size-form-button-wrapper {
         padding-bottom: 20px;
     }
@@ -388,10 +394,6 @@
         width: 330px;
         border: 2px solid;
         margin-top: 40px;
-    }
-
-    #instructions-container li {
-        font-size: 1em;
     }
 
     #print-recipe-button {

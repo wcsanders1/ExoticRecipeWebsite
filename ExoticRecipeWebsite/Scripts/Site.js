@@ -1,4 +1,4 @@
-﻿/*************************   COMMON VARIABLES   *************************************/
+﻿/*************************   GLOBAL VARIABLES   *************************************/
 
 var recipesDB;
 var recipeNum = 0;
@@ -12,7 +12,7 @@ function CallDatabase() {
     $.ajax({
         async: false,
         type: "GET",
-        url: searchUrl,
+        url: searchUrl,      // searchUrl set in cshtml
         data: "{}",
         dataType: "json",
         success: OnSuccess,
@@ -22,7 +22,6 @@ function CallDatabase() {
 
 $(document).ready(function () {
     if (page == "index") {
-        console.log("index");
         $("#index").addClass("active-nav-list-item");
     } else if (page == "search") {
         $("#search").addClass("active-nav-list-item");
@@ -61,19 +60,10 @@ function SetRecipe(recipe) {
     $recipeImage.attr("src", recipeImage);
     $recipeName.text(recipeName);
     $recipeCaption.text(recipeCaption);
-
-    //$ingredientsContainer.empty();
-
     ingredientsContent = IngredientsContent(recipe);
-
     $ingredientsContainer.html(ingredientsContent);
-
-    //$instructionsContainer.empty();
-
     instructionsContent = InstructionsContent(recipe);
-
     $instructionsContainer.html(instructionsContent);
-
     $authorContainer.text(recipeAuthor);
 }
 
@@ -120,7 +110,6 @@ function InstructionsContent(recipe) {
 
 
 /**********************   MAKING INGREDIENT LABEL ACCEPT ONLY INTS BETWEEN 1 AND 20   ****************************/
-
 $servingSize = $("#serving-size");
 
 $servingSize.keypress(function (e) {

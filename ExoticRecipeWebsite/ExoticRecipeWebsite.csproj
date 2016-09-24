@@ -131,7 +131,9 @@
     <Content Include="images\onions_with_ginger.gif" />
     <Content Include="images\pepper-cilantro.gif" />
     <Content Include="images\raw-pasta.gif" />
+    <Content Include="images\Rhusenekk.gif" />
     <Content Include="images\salt_and_coffee.gif" />
+    <Content Include="images\Seaflesh.gif" />
     <Content Include="images\sylvan.gif" />
     <Content Include="images\Syrian-waffles.gif" />
     <Content Include="images\Tazmanian_sizzler.gif" />
@@ -189,7 +191,6 @@
     <Content Include="fonts\Font Awesome\scss\_stacked.scss" />
     <Content Include="fonts\Font Awesome\scss\_variables.scss" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="Scripts\contact.js" />
     <Content Include="Scripts\index.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -211,12 +212,10 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Data\DailyRecipesRepository.cs" />
     <Compile Include="Data\RecipesSeedData.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\DailyRecipes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="siteEDM.Context.cs">
       <AutoGen>True</AutoGen>

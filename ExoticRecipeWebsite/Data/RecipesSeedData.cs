@@ -35,7 +35,7 @@ namespace ExoticRecipeWebsite.Data
                     recipeImageDB = "../images/onions_with_ginger.gif",
                     recipeDescriptionDB = "This is a classic main course from the Kambala region of northern India. It has a sublte aroma, but a bold, stringent palate. Pairs well with rice or wine.",
                     recipeIngredientsDB = "[{\"Ingredient\": \"Water\", \"Amount\": \"3\", \"SingularMeasurement\": \"cup\", \"PluralMeasurement\": \"cups\"}, {\"Ingredient\": \"Cinnamon\", \"Amount\": \"2\", \"SingularMeasurement\": \"tbsp\", \"PluralMeasurement\": \"tbsps\"}, {\"Ingredient\": \"Manganese\", \"Amount\": \"1\", \"SingularMeasurement\": \"cube\", \"PluralMeasurement\": \"cubes\"}]",
-                    recipeInstructionsDB = "{\"1\": \"Wring the juice out of the nettle.\", \"2\": \"Wash the salt.\", \"3\": \"Smash everything together until settled.\"}",
+                    recipeInstructionsDB = "{\"1\": \"Wring the juice out of the nettle.\", \"2\": \"Wash the salt.\", \"3\": \"Smash everything together until settled.\", \"4\": \"Hop atop the slop.\", \"5\": \"Becloud your notions of unrest and find joy.\"}",
                     recipeAuthorDB = "Bill Sanders"
                 },
                 new Table()
@@ -44,7 +44,7 @@ namespace ExoticRecipeWebsite.Data
                     recipeImageDB = "../images/salt_and_coffee.gif",
                     recipeDescriptionDB = "Don't be intimidated by the sophistication of this Russian side dish. Well... ok, be intimidated--but don't be shy about digging right in!",
                     recipeIngredientsDB = "[{\"Ingredient\": \"Olive Oil\", \"Amount\": \"0.5\", \"SingularMeasurement\": \"cup\", \"PluralMeasurement\": \"cups\"}, {\"Ingredient\": \"Sea Water\", \"Amount\": \"1\", \"SingularMeasurement\": \"gallon\", \"PluralMeasurement\": \"gallons\"}, {\"Ingredient\": \"Earth\", \"Amount\": \"2\", \"SingularMeasurement\": \"tsp\", \"PluralMeasurement\": \"tsps\"}, {\"Ingredient\": \"Eggs\", \"Amount\": \"1\", \"SingularMeasurement\": \"\", \"PluralMeasurement\": \"\"}]",
-                    recipeInstructionsDB = "{\"1\": \"Denounce delusion in all its forms.\", \"2\": \"Prepare a pan of hot cocnut oil.\", \"3\": \"Smash everything together.\", \"4\": \"Put yourself in alternative shoes.\" }",
+                    recipeInstructionsDB = "{\"1\": \"Denounce delusion in all its forms.\", \"2\": \"Prepare a pan of hot cocnut oil.\", \"3\": \"Put yourself in alternative shoes.\"}",
                     recipeAuthorDB = "Bill Sanders"
                 },
                 new Table()
@@ -67,9 +67,9 @@ namespace ExoticRecipeWebsite.Data
                 },
                 new Table()
                 {
-                    recipeNameDB = "Syrian Waffles",
+                    recipeNameDB = "Lensbugle",
                     recipeImageDB = "../images/Syrian-waffles.gif",
-                    recipeDescriptionDB = "A little \"syr\"up, a little salt, and a whole lot of delicious!",
+                    recipeDescriptionDB = "A little syrup, a little salt, and a whole lot of delicious!",
                     recipeIngredientsDB = "[{\"Ingredient\": \"Mint\", \"Amount\": \"3\", \"SingularMeasurement\": \"sprig\", \"PluralMeasurement\": \"sprigs\"}, {\"Ingredient\": \"Hope\", \"Amount\": \"50\", \"SingularMeasurement\": \"handful\", \"PluralMeasurement\": \"handfuls\"}, {\"Ingredient\": \"Paper\", \"Amount\": \"7.5\", \"SingularMeasurement\": \"tbsp\", \"PluralMeasurement\": \"tbsps\"}, {\"Ingredient\": \"Pie\", \"Amount\": \"4\", \"SingularMeasurement\": \"\", \"PluralMeasurement\": \"\"}, {\"Ingredient\": \"Corn Oil\", \"Amount\": \"11\", \"SingularMeasurement\": \"tube\", \"PluralMeasurement\": \"tubes\"}, {\"Ingredient\": \"Fame\", \"Amount\": \"2\", \"SingularMeasurement\": \"week\", \"PluralMeasurement\": \"weeks\"}, {\"Ingredient\": \"Calcium\", \"Amount\": \"0.25\", \"SingularMeasurement\": \"handful\", \"PluralMeasurement\": \"handfuls\"}, {\"Ingredient\": \"Bread\", \"Amount\": \"1\", \"SingularMeasurement\": \"loaf\", \"PluralMeasurement\": \"loaves\"}, {\"Ingredient\": \"Deer\", \"Amount\": \"1\", \"SingularMeasurement\": \"\", \"PluralMeasurement\": \"\"}, {\"Ingredient\": \"Cream\", \"Amount\": \"7\", \"SingularMeasurement\": \"glass\", \"PluralMeasurement\": \"glasses\"}]",
                     recipeInstructionsDB = "{\"1\": \"Get the salt and flour out of the drawer.\", \"2\": \"Put everything back.\", \"3\": \"Get out what you really need.\", \"4\": \"Do what you need to do.\", \"5\": \"Find a way of life that's closer to nature.\"}",
                     recipeAuthorDB = "Bill Sanders"
@@ -145,6 +145,24 @@ namespace ExoticRecipeWebsite.Data
                     recipeIngredientsDB = "[{\"Ingredient\": \"Crust\", \"Amount\": \"4\", \"SingularMeasurement\": \"crumb\", \"PluralMeasurement\": \"crumbs\"}, {\"Ingredient\": \"Dried Lime\", \"Amount\": \"2\", \"SingularMeasurement\": \"share\", \"PluralMeasurement\": \"shares\"}, {\"Ingredient\": \"Corn\", \"Amount\": \"9\", \"SingularMeasurement\": \"cob\", \"PluralMeasurement\": \"cobs\"}, {\"Ingredient\": \"Allspice\", \"Amount\": \".35\", \"SingularMeasurement\": \"tsp\", \"PluralMeasurement\": \"tsps\"}, {\"Ingredient\": \"Old Snow\", \"Amount\": \"5\", \"SingularMeasurement\": \"ball\", \"PluralMeasurement\": \"balls\"}, {\"Ingredient\": \"Wine\", \"Amount\": \".24\", \"SingularMeasurement\": \"shot\", \"PluralMeasurement\": \"shots\"}]",
                     recipeInstructionsDB = "{\"1\": \"Keeps your wits about.\", \"2\": \"Find the center and hold it.\", \"3\": \"Fold the ingredients till they're fluffed.\", \"4\": \"Don't be satisfied with good enough, unless that's better than what you'd thought would be sufficient.\", \"5\": \"Add salt to taste.\", \"6\": \"If you're under a delusion, you won't know it, so be humble.\"}",
                     recipeAuthorDB = "Bill Sanders"
+                },
+                new Table()
+                {
+                    recipeNameDB = "Seaflesh",
+                    recipeImageDB = "../images/Seaflesh.gif",
+                    recipeDescriptionDB = "Known as 'waterfood' in most parts of the western world, seaflesh has been a mainstay of the orient since Genghis Khan shot Napolean.",
+                    recipeIngredientsDB = "[{\"Ingredient\": \"Melons\", \"Amount\": \"6\", \"SingularMeasurement\": \"bushel\", \"PluralMeasurement\": \"bushels\"}, {\"Ingredient\": \"Country Steak\", \"Amount\": \"3\", \"SingularMeasurement\": \"heap\", \"PluralMeasurement\": \"heaps\"}, {\"Ingredient\": \"Lemon Zest\", \"Amount\": \"90\", \"SingularMeasurement\": \"shaving\", \"PluralMeasurement\": \"shavings\"}]",
+                    recipeInstructionsDB = "{\"1\": \"Ensure purity among the anointed.\", \"2\": \"Flap the hems off the buttress.\", \"3\": \"Light the paper lamps in the Roman fashion, and take a well-deserved seat.\", \"4\": \"Take the talisman to task.\", \"5\": \"Get those foods all broiled up.\", \"6\": \"When the foods are nice and cooked, take them out of the cooker and let them cool on the table.\", \"7\": \"Observe the general pining of others as they gaze toward the meal.\"}",
+                    recipeAuthorDB = "Bill Sanders"
+                },
+                new Table()
+                {
+                    recipeNameDB = "Rhusenekk",
+                    recipeImageDB = "../images/Rhusenekk.gif",
+                    recipeDescriptionDB = "True connoisseurs of this dish say it should only be cooked after the sun has completely set. They also say, however, that the sun never completely sets; rather, it just spins around. Nobody knows what the sun really does, but there's no doubt that this meal is tops!",
+                    recipeIngredientsDB = "[{\"Ingredient\": \"Cookies\", \"Amount\": \"40\", \"SingularMeasurement\": \"sheet\", \"PluralMeasurement\": \"sheets\"}, {\"Ingredient\": \"Lambs Vine\", \"Amount\": \"8.3\", \"SingularMeasurement\": \"peck\", \"PluralMeasurement\": \"pecks\"}, {\"Ingredient\": \"Garlic\", \"Amount\": \"2\", \"SingularMeasurement\": \"slice\", \"PluralMeasurement\": \"slices\"}, {\"Ingredient\": \"Desert Root\", \"Amount\": \".6\", \"SingularMeasurement\": \"current\", \"PluralMeasurement\": \"currents\"}, {\"Ingredient\": \"Roux\", \"Amount\": \"50\", \"SingularMeasurement\": \"cup\", \"PluralMeasurement\": \"cups\"}, {\"Ingredient\": \"Herbs\", \"Amount\": \"13\", \"SingularMeasurement\": \"box\", \"PluralMeasurement\": \"boxes\"}]",
+                    recipeInstructionsDB = "{\"1\": \"Chop everything up and mix it together in a heated pan.\", \"2\": \"Taste to see whether it's ok.\", \"3\": \"Add some oil.\", \"4\": \"Add water to taste.\"}",
+                    recipeAuthorDB = "Bill Sanders"
                 }
             };
 
@@ -159,32 +177,3 @@ namespace ExoticRecipeWebsite.Data
         }
     }
 }
-
-
-//[{"Ingredient": "Bark", "Amount": "34", "Measurement": "piece"}, {"Ingredient": "Bay Leaves", "Amount": "2", "Measurement": "head"}, {"Ingredient": "Seeds", "Amount": "8", "Measurement": "oz"}]
-
-
-
-
-
-//    if (!_context.Trips.Any())
-//    {
-//        var usTrip = new Trip()
-//        {
-//            DateCreated = DateTime.UtcNow,
-//            Name = "US Trip",
-//            UserName = "samhastings",
-//            Stops = new List<Stop>()
-//                    {
-//                        new Stop() {  Name = "Atlanta, GA", Arrival = new DateTime(2014, 6, 4), Latitude = 33.748995, Longitude = -84.387982, Order = 0 },
-//                        new Stop() {  Name = "New York, NY", Arrival = new DateTime(2014, 6, 9), Latitude = 40.712784, Longitude = -74.005941, Order = 1 },
-//                        new Stop() {  Name = "Boston, MA", Arrival = new DateTime(2014, 7, 1), Latitude = 42.360082, Longitude = -71.058880, Order = 2 },
-//                        new Stop() {  Name = "Chicago, IL", Arrival = new DateTime(2014, 7, 10), Latitude = 41.878114, Longitude = -87.629798, Order = 3 },
-//                        new Stop() {  Name = "Seattle, WA", Arrival = new DateTime(2014, 8, 13), Latitude = 47.606209, Longitude = -122.332071, Order = 4 },
-//                        new Stop() {  Name = "Atlanta, GA", Arrival = new DateTime(2014, 8, 23), Latitude = 33.748995, Longitude = -84.387982, Order = 5 }
-//                    }
-//        };
-
-//        _context.Trips.Add(usTrip);
-
-//        _context.Stops.AddRange(usTrip.Stops);

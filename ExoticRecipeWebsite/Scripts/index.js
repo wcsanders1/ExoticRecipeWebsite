@@ -1,4 +1,4 @@
-﻿/******************   COMMON VARIABLES   *********************************/
+﻿/******************   GLOBAL VARIABLES   *********************************/
 
 var loop = false;
 var timer;
@@ -42,27 +42,12 @@ function PositionScrollButtonAndAuthorWrapper() {
 
 $(window).resize(function () {
     PositionScrollButtonAndAuthorWrapper();
-    //PositionInstructions();
 });
 
 $(document).ready(function () {
     PositionScrollButtonAndAuthorWrapper();
-    //PositionInstructions();
 })
 
-
-
-/*******************   INSTRUCTIONS POSITIONING   ***************************/
-
-/*      NOT USED??    */
-
-function PositionInstructions() {
-    $instructions = $("#instructions");
-
-    if ($("#overlay").css("z-index") == 8) {
-        $recipeOfDayContainer.after($instructions);
-    }
-}
 
 
 /*******************   OVERLAY FOR HOMEPAGE   ******************************/
@@ -116,9 +101,10 @@ $("#recipe-image").hover(function () {
     $("#tooltip").css({ top: mousey, left: mousex });
 });
 
-/*****************   MISC.   **********************************************************/
 
 
+
+/*****************   AJAX and TIMER   **********************************************************/
 
 function OnSuccess(data) {
     recipesDB = data.sort(function (a, b) { return a.recipeNameDB.localeCompare(b.recipeNameDB); });
@@ -137,20 +123,39 @@ function GetRandomRecipe(length) {
 $(document).ready(function () {
 
     CallDatabase();
-
     recipeNum = GetRandomRecipe(recipesDB.length);
-
     SetRecipe(recipeNum);
-
     loop = true;
     timer = setInterval(function () { loopRecipes(loop); }, 7000);
-
     $("#play-scroll").addClass("scroll-button-highlight");
 });
 
 function resetTimer() {
     clearInterval(timer);
     timer = setInterval(function () { loopRecipes(loop); }, 7000);
+}
+
+function loopRecipes(loop) {
+
+    var $recipeElements = $("#recipe-image,#recipe-name,#recipe-caption,#ingredients-container,#instructions-container,#author-name");
+
+    var $ingredientButton = $("#ingredient-button");
+
+    if (loop) {
+        $ingredientButton.prop("disabled", true);
+        recipeNum++;
+
+        $recipeElements.fadeOut("slow", function () {
+            if (recipeNum >= recipesDB.length) {
+                recipeNum = 0;
+            }
+
+            $recipeElements.empty();
+            SetRecipe(recipeNum);
+            $recipeElements.fadeIn("slow");
+            $ingredientButton.prop("disabled", false);
+        });
+    }
 }
 
 
@@ -191,30 +196,3 @@ $("#play-scroll").mousedown(function () {
     $(this).addClass("activeCustom");
     loop = true;
 });
-
-
-
-/****************************   ITERATE RECIPES ON TIMER   ******************************/
-
-function loopRecipes(loop) {
-
-    var $recipeElements = $("#recipe-image,#recipe-name,#recipe-caption,#ingredients-container,#instructions-container,#author-name");
-
-    var $ingredientButton = $("#ingredient-button");
-
-    if (loop) {
-        $ingredientButton.prop("disabled", true);
-        recipeNum++;
-
-        $recipeElements.fadeOut("slow", function () {
-            if (recipeNum >= recipesDB.length) {
-                recipeNum = 0;
-            }
-
-            $recipeElements.empty();
-            SetRecipe(recipeNum);
-            $recipeElements.fadeIn("slow");
-            $ingredientButton.prop("disabled", false);
-        });
-    }
-}

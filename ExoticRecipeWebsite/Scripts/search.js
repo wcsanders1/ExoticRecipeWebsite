@@ -1,4 +1,6 @@
-﻿var pageSize = $("#search-page-measurement").css("z-index");
+﻿/*********************   GLOBAL VARIABLES   ***************************************************/
+
+var pageSize = $("#search-page-measurement").css("z-index");
 var chosenRecipe;
 var suggestedRecipe = null;
 
@@ -20,7 +22,7 @@ $(window).resize(function () {
 });
 
 
-/*****************  AJAX TO DATABASE ON SEARCH PAGE   ************************/
+/*****************  AJAX   ************************/
 
 function OnSuccess(data) {
     var content = "";
@@ -114,7 +116,7 @@ $("#get-recipe-name").keyup(function (e) {
     $searchResponse = $("#search-response");
     $getRecipeName = $("#get-recipe-name");
 
-    if (e.which != 13) {            // if not press "enter"
+    if (e.which != 13) {            // if not "enter"
         var searchInput = $getRecipeName.val().toString().toLowerCase();
         var searchLength = searchInput.length;
         var numberOfRecipes = recipesDB.length;
@@ -165,13 +167,15 @@ $("#get-recipe-name").keyup(function (e) {
             $searchResponse.css("color", "crimson");
             suggestedRecipe = null;
         }
-    } else if (e.which == 13) {             // if press "enter"
+    } else if (e.which == 13) {             // if "enter"
         if (suggestedRecipe != null) {
             RecipeChosen(suggestedRecipe);
             recipeNum = suggestedRecipe;
             DisplayRecipe(suggestedRecipe);
             $getRecipeName.val("");
             $searchResponse.html("");
+            suggestedRecipe = null;
+            HighlightRecipe(false, null);
         }
     }
 });
