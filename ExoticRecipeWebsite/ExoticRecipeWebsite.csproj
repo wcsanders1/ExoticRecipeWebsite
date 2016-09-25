@@ -99,10 +99,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\siteDatabase.mdf" />
-    <Content Include="App_Data\siteDatabase_log.ldf">
-      <DependentUpon>siteDatabase.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\contact.css" />
@@ -110,7 +106,6 @@
     <Content Include="Content\normalize.css" />
     <Content Include="Content\search.css" />
     <Content Include="Content\site.css" />
-    <Content Include="App_Data\dbo.recipeTable.sql" />
     <Content Include="fonts\Font Awesome\css\font-awesome.css" />
     <Content Include="fonts\Font Awesome\css\font-awesome.min.css" />
     <Content Include="fonts\Font Awesome\fonts\fontawesome-webfont.svg" />
@@ -190,6 +185,7 @@
     <Content Include="fonts\Font Awesome\scss\_screen-reader.scss" />
     <Content Include="fonts\Font Awesome\scss\_stacked.scss" />
     <Content Include="fonts\Font Awesome\scss\_variables.scss" />
+    <None Include="Properties\PublishProfiles\LocalPublish.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\index.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />

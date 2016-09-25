@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.UI;
-//using ExoticRecipeWebsite.Models;
 using ExoticRecipeWebsite.Data;
 using System.Web.Services;
 using System.Web.Script.Services;

@@ -12,7 +12,7 @@ function CallDatabase() {
     $.ajax({
         async: false,
         type: "GET",
-        url: searchUrl,      // searchUrl set in cshtml
+        url: "/Data/GetAllTables",      // searchUrl set in cshtml
         data: "{}",
         dataType: "json",
         success: OnSuccess,
