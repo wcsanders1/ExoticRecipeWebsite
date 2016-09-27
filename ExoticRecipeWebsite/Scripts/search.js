@@ -3,23 +3,42 @@
 var pageSize = $("#search-page-measurement").css("z-index");
 var chosenRecipe;
 var suggestedRecipe = null;
-
-
+var resize;
 
 $(document).ready(function () {
     CallDatabase();
     pageSize = $("#search-page-measurement").css("z-index");
-})
+    resize = true;
+    ResizeForIE();
+});
 
 $(window).resize(function () {
-    pageSize = $("#search-page-measurement").css("z-index");
+    if (!resize) {
+        resize = true;
+        return;
+    }
 
+    pageSize = $("#search-page-measurement").css("z-index");
+    
     if (suggestedRecipe != null) {
         ScrollToRecipe(suggestedRecipe);
     } else {
         ScrollToRecipe(chosenRecipe);
     }
+
+    ResizeForIE();
+
 });
+
+function ResizeForIE() {                // this is to fix a problem in IE with the horizontal scroll
+    if (pageSize < 4) {
+        if (resize) {
+            console.log("resizeing");
+            window.resizeBy(1, 0);
+            resize = false;
+        }
+    }
+}
 
 
 /*****************  AJAX   ************************/
