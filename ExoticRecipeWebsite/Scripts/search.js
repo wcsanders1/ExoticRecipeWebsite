@@ -13,17 +13,19 @@ $(document).ready(function () {
 });
 
 $(window).resize(function () {
-    if (!resize) {
-        resize = true;
-        return;
-    }
 
     pageSize = $("#search-page-measurement").css("z-index");
+    console.log(pageSize);
     
     if (suggestedRecipe != null) {
         ScrollToRecipe(suggestedRecipe);
     } else {
         ScrollToRecipe(chosenRecipe);
+    }
+
+    if (!resize) {
+        resize = true;
+        return;
     }
 
     ResizeForIE();

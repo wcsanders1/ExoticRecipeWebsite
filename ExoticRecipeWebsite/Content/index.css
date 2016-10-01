@@ -161,8 +161,6 @@
         -ms-flex-direction: column;
         -webkit-flex-direction: column;
         flex-direction: column;
-        /*order: -2;
-        position: absolute;*/
         top: 50px;
         align-items: center;
     }
@@ -212,7 +210,6 @@
         justify-content: center;
         align-self: center !important;
         position: absolute !important;
-        /*margin-left: 28%;*/
         margin-top: 500px;
         width: 100% !important;    /* used to be 45% */
         top: 0;

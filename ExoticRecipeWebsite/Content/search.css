@@ -3,7 +3,7 @@
 }
 
 #search-wrapper {
-    display: flex;
+    display: inline-flex;
     -ms-flex-direction: row;
     -webkit-flex-direction: row;
     flex-direction: row;

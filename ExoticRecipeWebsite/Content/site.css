@@ -62,7 +62,10 @@ body {
 }
 
 #body-wrapper {
+    display: -webkit-flex;
     display: flex;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
     flex-direction: column;
     min-height: 95vh;
 }
@@ -92,6 +95,7 @@ header {
 }
 
 #title-menu-wrapper {
+    display: -webkit-flex;
     display: flex;
     -ms-flex-direction: column;
     -webkit-flex-direction: column;
@@ -124,6 +128,7 @@ header {
 }
 
 #container-body-content {
+    display: -webkit-flex;
     display: flex;
     -ms-flex-direction: column;
     -webkit-flex-direction: column;
@@ -152,7 +157,10 @@ footer {
     width: 100%;
     position: relative;
     align-self: flex-end;
+    display: -webkit-flex;
     display: flex;
+    -ms-flex-direction: row;
+    -webkit-flex-direction: row;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
@@ -160,14 +168,16 @@ footer {
 }
 
 #footer-name-and-email-wrapper {
+    display: -webkit-flex;
     display: flex;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
     flex-direction: column;
 }
 
 #footer-github img {
     height: 30px;
     width: 30px;
-    
 }
 
 #ingredients-headline {
@@ -186,6 +196,7 @@ footer {
     margin-top: 40px;
     margin-bottom: 20px;
     padding: 30px;
+    display: -webkit-flex;
     display: flex;
     -ms-flex-direction: column;
     -webkit-flex-direction: column;
@@ -215,6 +226,7 @@ footer {
 }
 
 .ingredient-lists-container {
+    display: -webkit-flex;
     display: flex;
     -ms-flex-direction: row;
     -webkit-flex-direction: row;
@@ -225,7 +237,6 @@ footer {
     -ms-flex: 2;
     -webkit-flex: 2;
     flex: 2;
-    /*border-bottom: 1px dotted;*/
 }
 
 .ingredient-borders {
@@ -238,11 +249,11 @@ footer {
 }
 
 #ingredient-amounts {
+    display: -webkit-flex;
     display: flex;
     -ms-flex-direction: row;
     -webkit-flex-direction: row;
     flex-direction: row;
-    /*border-bottom: 1px dotted;*/
 }
 
     #ingredient-amounts .numerical-amounts {
@@ -283,6 +294,7 @@ footer {
     }
 
 #serving-size-form-button-wrapper {
+    display: -webkit-flex;
     display: flex;
     -ms-flex-direction: row;
     -webkit-flex-direction: row;
@@ -298,6 +310,7 @@ footer {
 }
 
 #recipe-name-container {
+    display: -webkit-flex;
     display: flex;
     width: 100%;
     margin: 50px 0;
@@ -316,6 +329,7 @@ footer {
     margin-top: 40px;
     margin-bottom: 20px;
     padding: 30px;
+    display: -webkit-flex;
     display: flex;
     -ms-flex-direction: column;
     -webkit-flex-direction: column;
@@ -326,9 +340,9 @@ footer {
     background-color: #DFE2DB;
 }
 
-    .instructions ol {
-        padding-left: 30px;
-    }
+.instructions ol {
+    padding-left: 30px;
+}
 
 #instructions-headline {
     margin: -62px 0 40px 0;
@@ -352,7 +366,7 @@ footer {
 
     #ingredients {
         width: 400px;
-        font-size: 1.25em        
+        font-size: 1.25em;
     }
 
     #ingredients-headline {
@@ -377,7 +391,6 @@ footer {
         font-size: 2em;
         margin: -72px 0 40px 0;
     }
-
 }
 
 
@@ -408,6 +421,7 @@ footer {
     }
 
     #recipe-name-container-wrapper {
+        display: -webkit-flex;
         display: flex;
         -ms-flex-direction: row;
         -webkit-flex-direction: row;
@@ -421,12 +435,11 @@ footer {
         flex: 1;
     }
 
-    #recipe-name-container h1 {
-        text-align: center;
-    }
+        #recipe-name-container h1 {
+            text-align: center;
+        }
 
     #instructions {
-        /*flex: 0 1 100%;*/
         align-self: flex-start;
         margin-right: 5%;
         margin-top: 0;
@@ -488,5 +501,4 @@ footer {
     #instructions-container li {
         font-size: 1em;
     }
-
 }
