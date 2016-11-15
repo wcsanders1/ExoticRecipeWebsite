@@ -1,2 +1,2 @@
 # ExoticRecipeWebsite
-A humorous website that contains pseudo-exotic recipes
+This is a humorous website that contains pseudo-exotic recipes.
